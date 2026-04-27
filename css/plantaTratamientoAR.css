@@ -369,9 +369,7 @@ body {
 }
 
 .videos {
-    display: grid;
-    gap: 1rem;
-    color: var(--grisOscuro);
+    display: none; /* TEMPORAL: oculto hasta obtener el contenido de videos */
 }
 
 .videos__separador {
