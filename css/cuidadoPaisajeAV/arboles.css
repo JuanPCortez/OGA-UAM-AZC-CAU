@@ -1,0 +1,357 @@
+/* ── CONTENEDOR PRINCIPAL DEL CARRUSEL DE ÁRBOLES ─────────────── */
+ 
+.arboles__carrusel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+ 
+/* ── FLECHAS DE NAVEGACIÓN ── */
+.arboles__btn {
+    flex-shrink: 0;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    transition: transform 0.15s ease, opacity 0.2s ease;
+    z-index: 2;
+}
+ 
+.arboles__btn:hover {
+    transform: scale(1.1);
+}
+ 
+.arboles__btn:active { transform: scale(0.96); }
+ 
+/* ════════════════════════════════════════════
+   ÍCONO DE FLECHA — coloca tu imagen aquí
+   ════════════════════════════════════════════
+   El .arboles__btn-icono es el contenedor del ícono.
+   Puedes poner dentro un <img src="tu-flecha.svg">
+   o un SVG inline.
+ 
+   El botón IZQUIERDO (.arboles__btn--prev) aplica
+   transform: scaleX(-1) automáticamente, así
+   puedes usar el mismo ícono apuntando a la derecha
+   para ambos botones.
+   ════════════════════════════════════════════ */
+.arboles__btn-icono {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rojoIconos);
+    fill: var(--rojoIconos);
+}
+ 
+.arboles__btn--prev .arboles__btn-icono {
+    transform: scaleX(-1);
+}
+ 
+/* Viewport — ventana visible del carrusel */
+.arboles__viewport {
+    overflow: hidden;
+    flex: 1;
+}
+ 
+/* ── TARJETAS DEL CARRUSEL DE ÁRBOLES ──────────────────────────── */
+ 
+.tarjeta {
+    background-color: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 0.4rem 1.2rem rgba(0,0,0,0.10);
+    padding: 1.8rem 1.8rem 1.5rem;
+    min-width: 22rem;
+    max-width: 24rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    flex-shrink: 0;
+}
+ 
+.tarjeta:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 0.8rem 2rem rgba(194,19,48,0.15);
+}
+ 
+.tarjeta a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    text-decoration: none;
+}
+ 
+.tarjeta a img {
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.3rem;
+}
+ 
+.tarjeta a .titulo {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+    width: 100%;
+}
+ 
+/* ── LÍNEA ROJA SEPARADORA ── */
+.tarjeta__separador {
+    width: 2.5rem;
+    height: 0.15rem;
+    background-color: var(--rojoIconos);
+    border-radius: 1rem;
+    margin: 0 auto 0.6rem auto;
+}
+ 
+.tarjeta a .descripcion {
+    font-size: 0.85em;
+    color: var(--gris);
+    text-align: center;
+    line-height: 1.4;
+}
+ 
+/* ══════════════════════════════════════════
+   POPUP — FICHA TÉCNICA DE ESPECIE
+══════════════════════════════════════════ */
+ 
+.ficha__overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    backdrop-filter: blur(3px);
+}
+ 
+.ficha__overlay.activo {
+    display: flex;
+}
+ 
+.ficha__modal {
+    background: #fff;
+    border-radius: 1.5rem;
+    max-width: 780px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.22);
+    position: relative;
+    animation: fichaEntrada 0.28s ease;
+}
+ 
+@keyframes fichaEntrada {
+    from { opacity: 0; transform: scale(0.95) translateY(12px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+ 
+/* Encabezado del modal: aviso + tag endémico */
+.ficha__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 1.5rem 0.5rem;
+    border-bottom: 0.1rem solid #f0f0f0;
+}
+ 
+.ficha__aviso {
+    font-size: 0.72em;
+    color: var(--rojoIconos);
+}
+ 
+.ficha__tag {
+    font-size: 0.72em;
+    color: var(--gris);
+    font-style: italic;
+    margin-right: 2.5rem;
+}
+ 
+/* Cuerpo: galería + info */
+.ficha__cuerpo {
+    display: grid;
+    grid-template-columns: 28% 1fr;
+    gap: 0;
+    min-height: 30rem;
+}
+ 
+/* ── GALERÍA DE FOTOS (izquierda) ── */
+.ficha__galeria {
+    position: relative;
+    border-radius: 0 0 0 1.5rem;
+    overflow: hidden;
+    background: #fff;
+    min-height: 30rem;
+    padding: 1rem;
+}
+ 
+.ficha__foto {
+    position: absolute;
+    inset: 1rem;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+ 
+.ficha__foto.activo { opacity: 1; }
+ 
+.ficha__foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+ 
+/* Barra de progreso galería */
+.ficha__galeria-progreso {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.2rem;
+    background-color: var(--rojoIconos);
+    width: 0%;
+    z-index: 3;
+}
+ 
+/* Dots galería */
+.ficha__galeria-dots {
+    position: absolute;
+    bottom: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.4rem;
+    z-index: 3;
+}
+ 
+.ficha__galeria-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, transform 0.2s;
+}
+ 
+.ficha__galeria-dot.activo {
+    background: #fff;
+    transform: scale(1.3);
+}
+ 
+/* Etiqueta "Galería fotos" */
+.ficha__galeria-label {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0.9rem;
+    font-size: 0.72em;
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 3;
+}
+ 
+/* ── INFO (derecha) ── */
+.ficha__info {
+    padding: 1.5rem 2rem 1.5rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+ 
+.ficha__nombre-cientifico {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    line-height: 1.2;
+    border-bottom: 0.18rem solid var(--rojoIconos);
+    padding-bottom: 0.4rem;
+    display: inline-block;
+}
+ 
+.ficha__nombre-comun {
+    font-size: 0.9em;
+    color: var(--gris);
+    font-weight: 600;
+    margin-top: 0.1rem;
+}
+ 
+.ficha__descripcion {
+    font-size: 0.82em;
+    color: var(--grisOscuro);
+    line-height: 1.65;
+    text-align: left;
+    margin-top: 0.6rem;
+}
+ 
+/* Lista de características con ícono hoja */
+.ficha__caracteristicas {
+    list-style: none;
+    padding: 0;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+ 
+.ficha__caracteristicas li {
+    font-size: 0.8em;
+    color: var(--grisOscuro);
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+ 
+.ficha__caracteristicas li::before {
+    content: "🌿";
+    flex-shrink: 0;
+    font-size: 0.9em;
+    margin-top: 0.05rem;
+}
+ 
+/* Pie: ejemplares en UAM */
+.ficha__footer {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 0.1rem solid #f0f0f0;
+    font-size: 0.88em;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    text-align: right;
+}
+ 
+/* ── RESPONSIVE POPUP ── */
+@media (max-width: 600px) {
+    .ficha__cuerpo {
+        grid-template-columns: 1fr;
+    }
+    .ficha__galeria {
+        min-height: 14rem;
+        border-radius: 0;
+    }
+    .ficha__info {
+        padding: 1.2rem 1.4rem;
+    }
+}

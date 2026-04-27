@@ -1,0 +1,1740 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --blanco: #fcfcfc;
+    --negro: rgb(63, 63, 62);
+    --gris: #757575;
+    --grisOscuro: rgb(63, 63, 62);
+    --rojo: rgb(199, 19, 49);
+    --rojoIconos: rgb(194, 19, 48);
+    --rojoIconosClaro: rgb(219, 5, 40);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*-------------------------------BIENVENIDA---------------------------------*/
+
+.BienvenidaSA {
+    display: flex;
+    padding: 3rem 0;
+}
+
+.BienvenidaSA div {
+    flex-basis: 50%;
+    align-self: center;
+    justify-self: center;
+}
+
+/* ===== Computadora (≥1050px) ===== */
+@media (min-width: 1050px) {
+    .BienvenidaSA {
+        flex-direction: row;
+    }
+
+    .TituloSA {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .MensajePrincipalSA {
+        max-width: 50rem;
+        margin: 0 2rem;
+    }
+
+    .mensajePrincipalSA__centrar {
+        margin: 0 2rem;
+    }
+}
+
+/* ===== Tablet (650–1049px) ===== */
+@media (min-width: 650px) and (max-width: 1049px) {
+    .BienvenidaSA {
+        flex-direction: row;
+    }
+
+    .TituloSA {
+        display: block;
+        
+        width: 100%;
+        margin: 0 3rem 7rem; 
+    }
+
+    .MensajePrincipalSA {
+        max-width: 50rem;
+        margin: 0 2rem;
+    }
+
+    .mensajePrincipalSA__centrar {
+        margin: 0 2rem;
+    }
+}
+
+/* ===== Celular (≤649px) ===== */
+@media (max-width: 649px) {
+    .BienvenidaSA {
+        flex-direction: column;
+    }
+
+    .TituloSA {
+        display: block;          
+        width: 95%;
+        margin: 0 2rem 8rem;     
+    }
+
+    #TSAD {
+        font-size: 2.8rem;
+        line-height: 1.3;
+        text-align: left;    
+        width: 95%;             
+        margin: 0 auto;         
+        font-weight: 700;
+    }
+    
+    .mensajePrincipalSA__centrar p {
+        margin-bottom: 2rem;
+        width: 90%;
+    }
+
+    .mensajePrincipalSA__centrar {
+        margin: 0 3rem;
+        
+    }
+
+    .tituloSA__centrar {
+        font-size: 2.0rem;
+        line-height: 1.3;
+    }
+}
+
+/* Texto principal */
+.mensajePrincipalSA__centrar {
+    font-size: 1.9rem;
+    text-align: justify;
+    width: 95%;
+}
+
+/*--------------------------FIN--BIENVENIDA---------------------------------*/
+
+/* ───────────────────────── SEPARACIÓN PLANTAS ─────────────────────────────────────────── */
+
+.SeparacionPlantas {
+    min-height: 15rem;
+    margin-bottom: 6rem;
+    background-image: url(../IMAGES/SolicitudAD/plantas.png);
+}
+
+/* ───────────FIN────────── SEPARACIÓN PLANTAS ─────────────────────────────────────────── */
+
+/*============================presentacion y DescripcionesCelular===================================================*/
+
+@media (min-width: 650px) and (max-width: 1049px) {
+    #TituloDescripcion {
+        font-size: 1.8rem;
+    }
+
+    #DescripcionEscrita {
+        font-size: 1.5rem;
+    }
+
+    .tarjeta-residuos {
+        position: relative;
+        top: 2.5rem;
+    }
+
+}
+
+@media (min-width: 650px) and (max-width: 1049px) {
+    #TituloDescripcion {
+        font-size: 1.5rem;
+    }
+
+    #DescripcionEscrita {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 649px) {
+    #TituloDescripcion {
+        font-size: 1.8rem;
+    }
+
+    #DescripcionEscrita {
+        font-size: 1.5rem;
+    }
+
+}
+
+.Presentaciones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: end;
+    margin: 5rem 0rem;
+}
+
+.TarjetasP {
+    width: 100%;
+    display: grid;
+    grid-template-areas: 'imagen'
+        'descripcion';
+    align-items: end;
+
+}
+
+@media (min-width: 1050px) {
+    .Presentaciones {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        justify-content: center;
+        align-items: start;
+        gap: 2rem;
+        margin: 5rem 0rem;
+
+    }
+
+    #Numeracion {
+        left: 16%;
+    }
+
+    #DescripcionEscrita {
+        font-size: 1.2rem;
+    }
+
+    .tarjeta-residuos {
+        margin-top: 2.5rem;
+    }
+
+}
+
+@media (min-width: 650px) and (max-width: 1049px) {
+    #Numeracion {
+        left: 6%;
+    }
+}
+
+@media (max-width: 649px) {
+    #Numeracion {
+        left: 2%;
+    }
+
+}
+
+@media (min-width: 650px) and (max-width: 1049px) {
+    #Numeracion p {
+        font-size: 2rem;
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media (max-width: 649px) {
+    #Numeracion p {
+        font-size: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+    }
+
+}
+
+@media (min-width: 650px) {
+    .DescripcionesCelular {
+        display: none;
+    }
+
+    #DescripcionEscrita {
+        word-break: break-all;
+    }
+
+}
+
+@media (max-width: 649px) {
+    #Numeracion {
+        display: none !important;
+    }
+
+}
+
+#Numeracion {
+    /* grid-area: numeracion; */
+    display: flex;
+    justify-content: right;
+    position: absolute;
+    top: 0;
+}
+
+#Numeracion p {
+    background-color: #38A7DF;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 900;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+#imagenT {
+    position: relative;
+    grid-area: imagen;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+#imagenT img {
+    height: 12rem;
+    margin-bottom: 3rem;
+}
+
+#imagenT img[src*="Residuos-electrónicos.png"] {
+    height: 10rem;
+}
+
+.titulo-residuos {
+    font-size: 2.4rem;
+    margin-bottom: -2rem;
+    font-weight: 600;
+    margin-left: 5rem;
+}
+
+
+#DescripcionT {
+    grid-area: descripcion;
+    text-align: center;
+    margin: auto;
+}
+
+#TituloDescripcion {
+    margin: 0rem 0rem;
+    font-weight: 500;
+}
+
+#DescripcionEscrita {
+    margin: -0.2rem 0rem;
+    font-weight: 300;
+    max-width: 28rem;
+}
+
+#DescripcionEscrita a {
+    text-decoration: none;
+    color: rgb(53, 129, 223);
+    display: block;
+    text-align: center;
+}
+
+#DescripcionEscrita span {
+    color: rgb(53, 129, 223);
+}
+
+.descripcionEscrita3,
+.descripcionEscrita1 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
+
+/* CARRUCEL */
+
+@media (max-width: 649px) {
+    .Presentaciones {
+        display: none;
+    }
+
+    #imagenT img {
+        height: 18rem;
+
+    }
+
+    #imagenT img[src*="Residuos-electrónicos.png"] {
+        height: 15.5rem;
+
+    }
+
+    .DescripcionesCelular {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .TarjetasP {
+        margin: 0;
+        display: flex;
+        margin-top: 5rem;
+    }
+
+    .CarruselTarjetas {
+        display: flex;
+        align-items: center;
+        align-content: space-between;
+        justify-content: center;
+        flex-wrap: nowrap;
+        width: 90%;
+    }
+
+    #DescripcionT {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titulo-residuos {
+        font-size: 2.4rem;
+        margin-bottom: -2rem;
+        font-weight: 600;
+        margin-left: 6.5rem;
+    }
+
+
+}
+
+.carousel-nav {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    width: 5rem;
+    height: 4rem;
+    background-color: rgb(194, 19, 48);
+    border: none;
+    color: white;
+    font-size: 3rem;
+    border-radius: 50%;
+    margin: 1.0rem;
+    margin-top: 5rem;
+}
+
+.carousel-nav:hover {
+    cursor: pointer;
+}
+
+/*================FIN=========presentacion y DescripcionesCelular===================================================*/
+
+
+/*──────────────────────────────────────────────────────── CONTACTO ─────────────────────────────────────────────*/
+/* Base (celular) */
+.presentacionYContacto {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1.5rem;
+
+}
+
+.ResiduosInfo {
+    display: flex;
+    justify-content: center;
+}
+
+.contactoTAR1,
+.contactoTAR2 {
+    flex: 1 1 100%;
+    text-align: left;
+    margin-left: 1.5rem;
+}
+
+/* Tipografía base */
+.residuos-intro {
+    font-size: 2.5rem;
+    text-align: center;
+    /* centra el texto dentro del bloque */
+    margin: 2rem auto;
+    /* centra el párrafo en la pantalla */
+    max-width: 120%;
+    /* controla el ancho para que no se vea demasiado largo */
+}
+
+.contactoTAR__titulo {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    margin-bottom: 1rem;
+}
+
+
+.contactoTAR__ubicacion,
+.contactoTAR__dias,
+.contactoTAR__horarios {
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    /* centra verticalmente ícono y texto */
+    gap: 0.8rem;
+    /* espacio entre ícono y texto */
+    margin-bottom: 1rem;
+    /* espacio entre cada fila de ícono+texto */
+    margin-left: 1.5rem;
+}
+
+.contactoTAR__ubicacion p,
+.contactoTAR__dias p,
+.contactoTAR__horarios p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Iconos en móvil */
+.contactoTAR1 svg,
+.contactoTAR2 svg {
+    height: 1.4rem;
+}
+
+@media (max-width: 649px) {
+    .residuos-intro {
+        font-size: 2.2rem;
+        margin-top: 6rem;
+    }
+}
+
+/* Tablet  */
+@media (min-width: 650px) and (max-width: 1049px) {
+    .presentacionYContacto {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "intro intro"
+            "contacto1 contacto2";
+        gap: 2rem;
+        padding: 0 2rem;
+        justify-items: center;
+        align-items: start;
+    }
+
+    .ResiduosInfo {
+        grid-area: intro;
+        display: flex;
+        justify-content: center;
+        /* centra horizontalmente el contenido */
+    }
+
+
+    .residuos-intro {
+        font-size: 2.2rem;
+        margin: 5 auto;
+
+        max-width: 150%;
+        /* controla del ancho */
+    }
+
+    .contactoTAR1 {
+        grid-area: contacto1;
+    }
+
+    .contactoTAR2 {
+        grid-area: contacto2;
+    }
+
+    .contactoTAR__titulo {
+        font-size: 1.8rem;
+    }
+
+    /* Iconos en tablet */
+    .contactoTAR1 svg,
+    .contactoTAR2 svg {
+        height: 1.8rem;
+    }
+}
+
+
+/* Computadora */
+@media (min-width: 1050px) {
+    .presentacionYContacto {
+        display: flex;
+        flex-direction: row;
+        /* todos en fila */
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 0 3rem;
+    }
+
+    .ResiduosInfo,
+    .contactoTAR1,
+    .contactoTAR2 {
+        flex: 1 1 30%;
+    }
+
+    .contactoTAR1 {
+        margin-left: 15rem;
+    }
+
+    .residuos-intro {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-align: justify;
+    }
+
+    .contactoTAR__titulo {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Iconos en escritorio */
+    .contactoTAR1 svg,
+    .contactoTAR2 svg {
+        height: 2.2rem;
+    }
+}
+
+
+/*───────────────────────────────────────FIN────────────── CONTACTO ─────────────────────────────────────────────*/
+
+
+/* ===================================== Procedimiento del servicio ======================================= */
+
+/* Estilos generales */
+.Procedimiento {
+    margin: 4rem 0;
+    text-align: center;
+    position: relative;
+    /* referencia para botones */
+}
+
+.procedimiento_titulo {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    text-align:left;
+    margin-left: 4.5rem;
+    
+}
+
+.procedimiento_contenedor {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    /* base para carrusel */
+}
+
+.TarjetaProc {
+    flex: 0 0 100%;
+    /* en celular ocupa todo el ancho */
+    border-radius: 8px;
+    margin: 0 1rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+
+}
+
+.numero {
+    background-color: rgb(194, 19, 48);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.imagenProc img {
+    max-width: 60%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+
+.tituloProc {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.descripcionProc {
+    font-size: 1.7rem;
+    font-weight: 400;
+    max-width: 90%;
+    margin-left: 5%;
+}
+
+/* ===== Celular (≤649px): carrusel con 1 tarjeta ===== */
+@media (max-width: 649px) {
+    .procedimiento_contenedor {
+        overflow-x: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    }
+
+    .imagenProc img {
+        max-width: 45%;
+    }
+
+    .TarjetaProc {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .TarjetaProc.activa {
+        display: block;
+        opacity: 1;
+    }
+
+    .proc-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 5rem;
+        height: 5rem;
+        background-color: rgb(194, 19, 48);
+        border: none;
+        color: white;
+        font-size: 4.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .proc-nav.prev {
+        left: 5rem;
+    }
+
+    .proc-nav.next {
+        right: 5rem;
+    }
+
+    .numero {
+        background-color: rgb(194, 19, 48);
+        color: #fff;
+        font-weight: bold;
+        width: 35%;
+        text-align: center;
+        padding: 2rem 0;
+        margin: 0 auto 1rem auto;
+        border-radius: 6px;
+        font-size: 3rem;
+    }
+
+    .tituloProc {
+        font-size: 4rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .descripcionProc {
+        font-size: 2rem;
+        font-weight: 400;
+        max-width: 90%;
+    }
+}
+
+/* ===== Tablet (650–1049px): carrusel con 2 tarjetas ===== */
+@media (min-width: 650px) and (max-width: 1049px) {
+    .procedimiento_contenedor {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+
+    .TarjetaProc {
+        flex: 0 0 50%;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .numero {
+        background-color: rgb(194, 19, 48);
+        color: #fff;
+        font-weight: bold;
+        width: 35%;
+        text-align: center;
+        padding: 2rem 0;
+        margin: 0 auto 1rem auto;
+        border-radius: 6px;
+        font-size: 3rem;
+    }
+
+    .TarjetaProc.activa {
+        display: flex;
+        /* importante: flex en tablet */
+        opacity: 1;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagenProc img {
+        max-width: 50%;
+    }
+
+    .proc-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 4rem;
+        height: 4rem;
+        background-color: rgb(194, 19, 48);
+        border: none;
+        color: white;
+        font-size: 3rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .proc-nav.prev {
+        left: 3rem;
+    }
+
+    .proc-nav.next {
+        right: 3rem;
+    }
+}
+
+
+/* ===== Computadora (≥1050px): 4 tarjetas en fila ===== */
+@media (min-width: 1050px) {
+    .procedimiento_contenedor {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 columnas */
+        gap: 2rem;
+        overflow: visible;
+        /* ya no es carrusel */
+    }
+
+    .TarjetaProc {
+        flex: unset;
+        /* se adapta al grid */
+        margin: 0;
+    }
+
+    .imagenProc img {
+        max-width: 50%;
+    }
+
+    /* Ocultar botones en computadora */
+    .proc-nav {
+        display: none;
+    }
+}
+
+/* ======================= FIN Procedimiento del servicio ======================================= */
+
+/* ===================================== Portal Solicitud Única ======================================= */
+
+
+.SectionPortal {
+    margin: 4rem 0;
+    min-height: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.portal_titulo {
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    font-weight: 700;
+    text-align: start;
+
+}
+
+
+.portal_contenedor {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.TarjetaPortal {
+    flex: 0 0 100%;
+
+    border-radius: 8px;
+    margin: 0 1rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.imagenPortal {
+    height: auto;
+    width: 80%;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+}
+
+.descripcionPortal {
+    font-size: clamp(1.7rem, 3vw, 1.5rem);
+    font-weight: 400;
+    max-width: 90%;
+    line-height: 2.2rem;
+}
+
+.imagenPortal img {
+    width: 100%;
+    /* ocupa todo el ancho del contenedor */
+    height: auto;
+    /* ocupa todo el alto del contenedor */
+    object-fit: cover;
+    /* recorta sin deformar */
+    border-radius: 6px;
+    /* mismo borde redondeado */
+}
+
+/* Flechas */
+.tarjetaFlechas .flechasPortal {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.flecha {
+    height: 2rem;
+    width: 2rem;
+}
+
+/*----------------------*/
+.jerarquiaPortal {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+    line-height: 25%;
+}
+
+.jerarquiaPortal li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-bottom: 0.8rem;
+}
+
+.recolección_portal {
+    line-height: 100%;
+}
+
+/* Iconos SVG */
+.icono {
+    height: 1.5rem;
+    width: 2.5rem;
+    flex-shrink: 0;
+}
+
+/* Línea en L */
+.flechaL .linea {
+    stroke: #c21330;
+    stroke-width: 2;
+    fill: none;
+}
+
+/* Triángulo */
+.flechaL .triangulo {
+    fill: #c21330;
+}
+
+/* Círculo doble */
+.circuloDoble .outer {
+    stroke: #c21330;
+    stroke-width: 2;
+    fill: none;
+}
+
+.circuloDoble .inner {
+    fill: #c21330;
+}
+
+/* --- Sangría jerárquica --- */
+.jerarquiaPortal li:nth-child(2) {
+    margin-left: 1.5rem;
+    /* Secretaría */
+}
+
+.jerarquiaPortal li:nth-child(3) {
+    margin-left: 3rem;
+    /* SEC */
+}
+
+.jerarquiaPortal li:nth-child(4) {
+    margin-left: 4.5rem;
+    /* Recolección */
+}
+
+/* ===== Celular (≤649px): carrusel con 1 tarjeta ===== */
+@media (max-width: 649px) {
+    .portal_contenedor {
+        overflow-x: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        position: relative;
+        min-height: 405px;
+        
+    }
+
+    .imagenPortal {
+        width: 60%;
+        height: auto;
+        margin: 0 auto;
+    }
+    .contenidoPortal {
+        text-align: left;   
+        margin-left: 4rem;  
+        width: 90%;
+        margin-top: 1rem;
+    }
+
+    .imagenPortal img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .TarjetaPortal {
+        flex: 0 0 calc(70% - 2rem);
+        margin: 0 auto;
+        scroll-snap-align: center;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .TarjetaPortal.activa {
+        display: block;
+        opacity: 1;
+    }
+
+    .portal_titulo {
+        margin-left: 10%;
+        font-size: 1.4em;
+
+    }
+
+    .portal-nav {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 5rem;
+        height: 5rem;
+        background-color: rgb(194, 19, 48);
+        border: none;
+        color: white;
+        font-size: 4.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .portal-nav.prev {
+        left: 3rem;
+    }
+
+    .portal-nav.next {
+        right: 3rem;
+    }
+}
+
+/* ===== Tablet (650–1049px): 3 tarjetas en fila ===== */
+@media (min-width: 650px) and (max-width: 1049px) {
+    .portal_contenedor {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0rem;
+        overflow: visible;
+        text-align: left; 
+    }
+
+    .imagenPortal {
+        width: 55%;
+        height: auto;
+    }
+    
+
+
+    .imagenPortal img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin-left: -4rem;
+    }
+
+    .TarjetaPortal {
+        flex: unset;
+    }
+
+    .portal_titulo {
+        margin-left: 3%;
+        font-size: 2.2em;
+
+    }
+    
+
+    .tarjetaFlechas .flecha.tercera {
+        fill: none;
+        stroke: #c21330;
+        stroke-width: 2;
+    }
+
+    .portal-nav {
+        display: none;
+    }
+
+    /* --- Sangría jerárquica --- */
+    .jerarquiaPortal li:nth-child(2) {
+        margin-left: 1.0rem;
+        /* Secretaría */
+    }
+
+    .jerarquiaPortal li:nth-child(3) {
+        margin-left: 2rem;
+        /* SEC */
+    }
+
+    .jerarquiaPortal li:nth-child(4) {
+        margin-left: 3rem;
+        /* Recolección */
+    }
+}
+
+
+/* ===== Computadora (≥1050px): 2 arriba, 1 abajo izquierda ===== */
+@media (min-width: 1050px) {
+    .portal_contenedor {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            "tarjeta1 tarjeta2"
+            "tarjeta3 tarjeta3";
+        gap: 2rem;
+        overflow: visible;
+        max-width: 1200px;
+        margin: 0 auto; 
+        justify-items: center;
+        margin-left: 3rem;
+        
+    }
+    .jerarquiaPortal{
+        line-height: 0.6rem;
+    }
+    .recolección_portal {
+    line-height: 120%;
+    }
+    .portal_servicio{
+        margin-top: -1rem;
+    }
+
+    .TarjetaPortal {
+        flex-direction: row;/* imagen y texto en fila */
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left; /* texto alineado a la izquierda */
+        gap: 2rem; /* espacio entre imagen y texto */
+        width: 100%;
+        max-width: 700px;
+        
+    }
+
+    .portal_titulo {
+        margin-left: 3%;
+    }
+
+    .imagenPortal {
+        flex: 0 0 25%;
+        height: 200px;
+        margin-bottom: 0;
+
+    }
+
+    .contenidoPortal {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+
+    .descripcionPortal {
+        font-size: 1.7rem;
+        line-height: 1.4;
+    }
+
+    .TarjetaPortal:nth-child(1) {
+        grid-area: tarjeta1;
+    }
+
+    .TarjetaPortal:nth-child(2) {
+        grid-area: tarjeta2;
+    }
+
+    .TarjetaPortal:nth-child(3) {
+        grid-area: unset;
+        justify-self: start;
+        width: 100%;
+        margin-bottom: -10rem;
+    }
+
+    .portal-nav {
+        display: none;
+    }
+    
+}
+
+/* ======================= FIN Portal Solicitud Única ======================================= */
+
+/* ======================================= anuncioAD ============================================ */
+
+/* anuncioAD */
+
+.Logo_Correo,
+.Logo__Telefono,
+.Logo_Ubicacion,
+.Logo_Calendario,
+.Logo_Reloj,
+.Logo_FacebookR {
+    height: 2rem;
+}
+
+/* ANUNCIOS */
+
+.anunciosAD {
+    display: grid;
+    max-width: 100%;
+    margin-top: 10rem;
+}
+
+.plantaTratamiento {
+    grid-area: aguasResiduales;
+    line-height: 1.7;
+}
+
+.plantaTratamiento__titulo {
+    position: relative;
+}
+
+.NombrePlanta {
+    top: 3rem;
+    color: var(--grisAnuncios);
+}
+
+.plantaTratamiento__titulo h2 {
+    margin: 0;
+}
+
+.anunciosAD__datosDeContacto {
+    position: absolute;
+    left: 0;
+}
+
+.anunciosAD__datosDeContacto div {
+    display: flex;
+}
+
+.anunciosAD__datosDeContacto p {
+    color: var(--grisAnuncios);
+}
+
+
+.quejasAD {
+    grid-area: quejas;
+    line-height: 1.7;
+    margin: 0 2.5rem;
+    margin-bottom: 12rem;
+}
+
+.quejasAD__titulo h2 {
+    font-size: 1.8em;
+    margin: 0;
+    margin-bottom: 4rem;
+}
+
+.quejasAD__datosContacto {
+    display: flex;
+    column-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.divImgUamito {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quejasAD__datos {
+    margin: 3rem 0;
+    flex-basis: 50%;
+    display: grid;
+    flex-direction: column;
+}
+
+.quejasAD__datos p {
+    text-align: justify;
+}
+
+.quejasAD__datos>p:first-child {
+    color: var(--grisAnuncios);
+}
+
+.quejasAD__telefono,
+.quejasAD__telefono2,
+.quejasAD__correo {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    width: 100%;
+}
+@media (min-width: 1050px) {
+    .anunciosAD {
+        grid-template-areas: 'aguasResiduales quejas'
+                             'mapas mapas';
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem; 
+    }
+
+    .plantaTratamiento {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .plantaTratamiento__titulo h2 {
+        font-size: 1.6em; 
+    }
+
+    .NombrePlanta {
+        font-size: 1.6em; 
+        margin-top: -0.5rem;
+    }
+
+    .tituloSeparaccion {
+        font-size: 1.7em; 
+        font-weight: 700;
+    }
+
+    .anunciosAD__datosDeContacto {
+        font-size: 1.05em;   
+        line-height: 1.5;    
+        gap: 1.2rem;         
+        margin-top: 6.5em;   
+    }
+
+    .anunciosAD__datosDeContacto svg {
+        height: 2rem;        
+        width: auto;
+        margin-right: 0.4rem;
+        
+    }
+    .Logo_FacebookR{
+        margin-left: 0.5rem;
+    }
+    .Logo_Ubicacion{
+        margin-left: 0.45rem;
+    }
+
+    .anunciosAD__datosDeContacto p {
+        margin: 0;
+        font-size: 0.95em;   
+    }
+
+    .texto_quejasAD {
+        font-size: 0.9em;  
+        line-height: 1.6rem; 
+        margin-top: 0;
+    }
+
+    .quejasAD {
+        display: flex;
+        flex-direction: column;
+        grid-area: quejas;
+        justify-content: end;
+        margin-left: -4rem !important; 
+    }
+
+    .quejasAD__titulo h2 {
+        font-size: 1.6em; 
+    }
+
+    .quejasAD__datos>p:first-child {
+        max-width: 35rem; 
+    }
+
+    .imgUamito {
+        max-height: 22rem; 
+    }
+
+    .quejasAD__datos {
+        row-gap: 18%; 
+    }
+
+    .quejasAD__datosContacto {
+        margin-right: 8rem; 
+    }
+
+    .correoTelefonoQuejas {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; 
+        font-size: 0.95em; 
+    }
+
+    .correoTelefonoQuejas svg {
+        height: 1.4rem; 
+        width: auto;
+    }
+
+    .correoTelefonoQuejas p {
+        margin: 0;
+        line-height: 1.1; 
+    }
+}
+
+
+@media (max-width: 649px) {
+    .anunciosAD {
+        grid-template-areas:
+            'aguasResiduales'
+            'mapas'
+            'quejas';
+    }
+
+    .plantaTratamiento {
+        margin: 0 1.5rem;
+        margin-bottom: 10rem;
+    }
+
+    .anunciosAD {
+        grid-template-areas:
+            'aguasResiduales'
+            'mapas'
+            'quejas';
+    }
+
+    .plantaTratamiento__titulo h2 {
+        font-size: 1.3em;
+    }
+
+    .plantaTratamiento__titulo {
+        margin-left: 15px;
+    }
+
+    .tituloSeparaccion {
+        font-size: 1.3em;
+        font-weight: 700;
+        margin-top: -5rem;
+    }
+
+    .NombrePlanta {
+        font-size: 2em;
+    }
+
+    .NombrePlanta {
+        font-size: 1.1em;
+    }
+
+    .imgUamito {
+        max-width: 60%;
+        margin: 3rem 0;
+    }
+
+    .quejasAD__correo {
+        word-break: break-all;
+    }
+
+    .quejasAD__datosContacto {
+        flex-direction: column;
+    }
+
+    .quejasAD__datos p {
+        margin: 1rem 0;
+    }
+
+    .anunciosAD__datosDeContacto {
+        top: 13rem;
+    }
+
+}
+
+@media (min-width: 650px) and (max-width: 1049px) {
+    .anunciosAD {
+        grid-template-areas:
+            'aguasResiduales'
+            'mapas'
+            'quejas';
+    }
+
+    .tituloSeparaccion {
+        font-size: 2em;
+        font-weight: 700;
+    }
+
+    .plantaTratamiento {
+        margin: 0 2.5rem;
+        margin-bottom: 20rem;
+
+    }
+
+    .plantaTratamiento__titulo h2 {
+        font-size: 1.9em;
+    }
+
+    .plantaTratamiento__titulo {
+        margin-left: 20px;
+    }
+
+    .NombrePlanta {
+        font-size: 2em;
+    }
+
+    .quejasAD__titulo {
+        margin-left: 15px;
+    }
+
+    .texto_quejasAD {
+        font-size: 1.2em;
+        margin-top: -3.2em;
+        line-height: 3rem;
+        margin-right: -40px;
+    }
+
+    .quejasAD__titulo_principal {
+        font-size: 2.1em;
+        font-weight: 700;
+    }
+
+
+    .quejasAD__datos p {
+        width: 90%;
+    }
+
+    .quejasAD__datos {
+        row-gap: 10%;
+    }
+
+    .imgUamito {
+        max-width: 70%;
+        margin-right: auto;
+
+
+    }
+
+    .quejasAD__datosContacto {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .anunciosAD__datosDeContacto {
+        top: 18rem;
+    }
+
+    .anunciosAD__datosDeContacto {
+        font-size: 1.15em;
+        line-height: 1.6;
+        gap: 1.5rem;
+        margin-top: 1em;
+    }
+
+    .anunciosAD__datosDeContacto svg {
+        height: 2.3rem;
+        width: auto;
+        margin-right: 0.5rem;
+    }
+
+    .correoTelefonoQuejas {
+        display: flex;
+        flex-direction: column;
+        
+        gap: 1.2rem;
+        font-size: 1.2em;
+        margin-top: 2.7em;
+    }
+
+    .correoTelefonoQuejas svg {
+        height: 1.6rem;
+        width: auto;
+    }
+
+    .correoTelefonoQuejas p {
+        margin: 0;
+        line-height: 1.0;
+    }
+}
+
+
+/* ====================== MAPA ====================================== */
+
+@media (min-width: 1050px) {
+    .MapaPrincipal {
+        margin: -4rem 8rem 13rem 8rem;
+        height: auto;
+
+    }
+
+    .logoPlantaTratamiento {
+        max-height: 7rem;
+    }
+}
+
+@media (min-width: 650px) and (max-width: 1049px) {
+    .MapaPrincipal {
+        margin: 4rem 4rem 9rem 4rem;
+        height: auto;
+    }
+
+    .logoPlantaTratamiento {
+        max-height: 5.5rem;
+    }
+}
+
+@media (max-width: 649px) {
+    .MapaPrincipal {
+        margin: 12rem 2rem 6rem 2rem;
+    }
+
+    .logoPlantaTratamiento {
+        max-height: 3.5rem;
+        /*4,3*/
+    }
+}
+
+.MapaPrincipal {
+    grid-area: mapas;
+}
+
+.MapaPrincipal div {
+    position: relative;
+}
+
+.MapaPrincipal img {
+    max-width: 100%;
+}
+
+.logoPlantaTratamiento {
+    position: absolute;
+    top: -2rem;
+}
+
+/* ==================================FIN== anuncioAD ============================================ */
+
+/* ═══════════════════════════════════════════════════════
+   PARCHE — flechas unificadas para SolicitudAD
+   Pegar al final del CSS principal.
+   Sobreescribe los estilos de .carousel-nav,
+   .proc-nav y .portal-nav donde tenían imagen SVG
+   o background rojo sólido.
+═══════════════════════════════════════════════════════ */
+ 
+/* ── Estilo base compartido (igual que .proyectos__nav-btn) ── */
+.btn-nav-unificado {
+    width:           2.8rem;
+    height:          2.8rem;
+    border-radius:   50%;
+    border:          0.15rem solid var(--rojo);
+    background:      white;
+    color:           var(--rojo);
+    cursor:          pointer;
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    flex-shrink:     0;
+    transition:      background var(--transicion, 0.2s ease),
+                     color var(--transicion, 0.2s ease);
+    /* Anular imagen heredada */
+    padding:         0;
+}
+ 
+.btn-nav-unificado:hover {
+    background: var(--rojo);
+    color:      white;
+}
+ 
+.btn-nav-unificado svg {
+    width:       1.2rem;
+    height:      1.2rem;
+    stroke:      currentColor;
+    fill:        none;
+    flex-shrink: 0;
+    display:     block;
+}
+ 
+/* Anular estilos previos de cada clase específica
+   que tenían background rojo sólido, img, tamaños fijos, etc. */
+.carousel-nav.btn-nav-unificado,
+.proc-nav.btn-nav-unificado,
+.portal-nav.btn-nav-unificado {
+    background-color: white !important;
+    font-size:        unset !important;
+    /* anula font-size usado como ícono de texto */
+}
+ 
+/* Posicionamiento: mantener el absolute de proc-nav y portal-nav
+   pero con el nuevo tamaño */
+@media (max-width: 1049px) {
+    .proc-nav.btn-nav-unificado,
+    .portal-nav.btn-nav-unificado {
+        width:  2.8rem;
+        height: 2.8rem;
+    }
+}
+ 
+/* Carrusel residuos: centrado vertical con las tarjetas */
+.carousel-nav.btn-nav-unificado {
+    margin-top: 5rem;
+    /* hereda el margen-top original */
+}
+
+/* ═══════════════════════════════════════════════════════
+   PARCHE HOVER FLECHAS — aplicar al final del CSS principal
+   Garantiza fondo rojo + ícono blanco en hover para
+   todos los botones de navegación unificados.
+═══════════════════════════════════════════════════════ */
+ 
+.btn-nav-unificado:hover,
+.carousel-nav.btn-nav-unificado:hover,
+.proc-nav.btn-nav-unificado:hover,
+.portal-nav.btn-nav-unificado:hover {
+    background-color: var(--rojo) !important;
+    color: white !important;
+    border-color: var(--rojo) !important;
+}
+ 
+@media (min-width: 1050px) {
+    .carousel-nav,
+    .proc-nav,
+    .portal-nav {
+        display: none !important;
+    }
+}
+
+/* Escritorio y tablet: ocultar */
+@media (min-width: 650px) {
+    .portal-nav {
+        display: none !important;
+    }
+}
+ 
+/* Móvil: asegurar que siguen visibles */
+@media (max-width: 649px) {
+    .portal-nav {
+        display: flex !important;
+    }
+}

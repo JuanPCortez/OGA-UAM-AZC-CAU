@@ -1,0 +1,438 @@
+// FUNCIÓN PARA AVANZAR LOS NÚMEROS
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // ── Función genérica para animar un número ──────────────────────
+  function crearObserver(contador, numFinal, duracion = 1000, desimal) {
+    let animando = false;
+    let contado  = false;
+    let inicio   = null;
+
+    function animarContador(timestamp) {
+      if (!inicio) inicio = timestamp;
+      const progreso = timestamp - inicio;
+      const valor = Math.min((progreso / duracion) * numFinal, numFinal);
+      contador.textContent = desimal ? valor.toFixed(1) : valor.toFixed(0);
+      if (valor < numFinal) {
+        requestAnimationFrame(animarContador);
+      } else {
+        animando = false;
+        contado  = true;
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animando && !contado) {
+          animando = true;
+          inicio   = null;
+          requestAnimationFrame(animarContador);
+        } else if (!entry.isIntersecting) {
+          contador.textContent = desimal ? '0.0' : '0';
+          contado  = false;
+          animando = false;
+          inicio   = null;
+        }
+      });
+    }, { threshold: 0.1 });
+
+    return observer;
+  }
+
+  // ── Función con "Tn" concatenado (rojo, para Electrónicos/Archivo muerto) ──
+  function crearObserverConTn(contador, numFinal, duracion = 1200) {
+    let animando = false;
+    let contado  = false;
+    let inicio   = null;
+
+    function animarContador(timestamp) {
+      if (!inicio) inicio = timestamp;
+      const progreso = timestamp - inicio;
+      const valor = Math.min((progreso / duracion) * numFinal, numFinal);
+      contador.textContent = valor.toFixed(1) + ' Tn';
+      if (valor < numFinal) {
+        requestAnimationFrame(animarContador);
+      } else {
+        animando = false;
+        contado  = true;
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animando && !contado) {
+          animando = true;
+          inicio   = null;
+          requestAnimationFrame(animarContador);
+        } else if (!entry.isIntersecting) {
+          contador.textContent = '0.0 Tn';
+          contado  = false;
+          animando = false;
+          inicio   = null;
+        }
+      });
+    }, { threshold: 0.1 });
+
+    return observer;
+  }
+
+  // ── Contadores: Electrónicos y Archivo muerto ───────────────────
+  const seccionBidon        = document.querySelector('.contenidoBidon');
+  const contadorElectronicos = document.querySelector('.electronicos .numeros__contador');
+  const contadorArchivoMuerto = document.querySelector('.archivo_muerto .numeros__contador');
+
+  if (seccionBidon && contadorElectronicos) {
+    crearObserverConTn(contadorElectronicos, 2.9, 1200).observe(seccionBidon);
+  }
+  if (seccionBidon && contadorArchivoMuerto) {
+    crearObserverConTn(contadorArchivoMuerto, 5.1, 1200).observe(seccionBidon);
+  }
+
+  // ── Contadores: sección "Durante el 2024" ──────────────────────
+  const titulo__1 = document.querySelector('.titulo__1');
+  const titulo__2 = document.querySelector('.titulo__2');
+  const titulo__3 = document.querySelector('.titulo__3');
+
+  if (titulo__1) crearObserver(titulo__1, 167.6, 1000, true).observe(titulo__1);
+  if (titulo__2) crearObserver(titulo__2, 21.3,  1000, true).observe(titulo__2);
+  if (titulo__3) crearObserver(titulo__3, 1.7,   1000, true).observe(titulo__3);
+
+});
+
+// CONTROL DE LOS VIDEOS DE YOUTUBE
+let players = [];
+let videoActivo = null;
+let esVideoPrincipal = false;
+let videoSeccion = null;
+
+// REGISTRO DE LOS VIDEOS
+function onYouTubeIframeAPIReady() {
+  players = [
+    new YT.Player('video1', {
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    }),
+    new YT.Player('video2', {
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    }),
+    new YT.Player('video3', {
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    })
+  ];
+}
+// PARAR LOS VIDEOS QUE NO FUÉRON SELECCIONADOS Y GUARDAR CUAL FUÉ EL SELECCIONADO
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.PLAYING) {
+
+    if (window.innerWidth > 729) {
+      videoActivo = event.target;
+      if (videoActivo.getIframe().parentElement.classList.contains('videoA')) {
+        esVideoPrincipal = false;
+      } else {
+        esVideoPrincipal = true;
+      }
+
+      if (videoActivo.getIframe().parentElement.classList.contains('videos__comoFunciona')) {
+        videoSeccion = 'videos__comoFunciona';
+      } else if (videoActivo.getIframe().parentElement.classList.contains('videos___comoSeProduce')) {
+        videoSeccion = 'videos___comoSeProduce';
+      } else {
+        videoSeccion = 'videos__historia';
+      }
+      acomodarVideos();
+    }
+
+
+    // Pausa todos los demás videos que no sean el que se está reproduciendo
+    players.forEach(player => {
+      if (player !== event.target) {
+        player.pauseVideo();
+      }
+    });
+  }
+}
+
+// FUNCIÓN PARA COLOCAR EL VIDEO SELECCIONADO EN EL ESPACIO PRINCIPAL
+
+function acomodarVideos() {
+  const videos__comoFunciona = document.querySelector('.videos__comoFunciona');
+  const videos___comoSeProduce = document.querySelector('.videos___comoSeProduce');
+  const videos__historia = document.querySelector('.videos__historia');
+
+  if (esVideoPrincipal) {
+
+    if (videoSeccion === 'videos__comoFunciona') {
+      videos__comoFunciona.classList.add('oculto');
+    } else if (videoSeccion === 'videos___comoSeProduce') {
+      videos___comoSeProduce.classList.add('oculto');
+    } else {
+      videos__historia.classList.add('oculto');
+    }
+
+    setTimeout(() => {
+
+      if (videoActivo.getIframe().id === 'video2') {
+        videos__comoFunciona.classList.remove('videoA');
+        videos__comoFunciona.classList.remove('videoB');
+        videos__comoFunciona.classList.add('videoC');
+
+        videos___comoSeProduce.classList.remove('videoB');
+        videos___comoSeProduce.classList.remove('videoC');
+        videos___comoSeProduce.classList.add('videoA');
+
+        videos__historia.classList.remove('videoC');
+        videos__historia.classList.remove('videoA');
+        videos__historia.classList.add('videoB');
+      } else if (videoActivo.getIframe().id === 'video3') {
+
+
+
+        videos__comoFunciona.classList.remove('videoA');
+        videos__comoFunciona.classList.remove('videoC');
+        videos__comoFunciona.classList.add('videoB');
+
+        videos___comoSeProduce.classList.remove('videoB');
+        videos___comoSeProduce.classList.remove('videoA');
+        videos___comoSeProduce.classList.add('videoC');
+
+        videos__historia.classList.remove('videoB');
+        videos__historia.classList.remove('videoC');
+        videos__historia.classList.add('videoA');
+
+
+
+      }
+      else {
+        videos__comoFunciona.classList.remove('videoB');
+        videos__comoFunciona.classList.remove('videoC');
+        videos__comoFunciona.classList.add('videoA');
+
+        videos___comoSeProduce.classList.remove('videoA');
+        videos___comoSeProduce.classList.remove('videoC');
+        videos___comoSeProduce.classList.add('videoB');
+
+        videos__historia.classList.remove('videoB');
+        videos__historia.classList.remove('videoA');
+        videos__historia.classList.add('videoC');
+      }
+      videos__comoFunciona.classList.remove('oculto');
+      videos___comoSeProduce.classList.remove('oculto');
+      videos__historia.classList.remove('oculto');
+    }, 500);
+  }
+}
+
+
+function abrirPopup(id) {
+    document.getElementById(id).classList.add('activo');
+    document.body.style.overflow = 'hidden'; // evita scroll del fondo
+}
+
+function cerrarPopup(id) {
+    document.getElementById(id).classList.remove('activo');
+    document.body.style.overflow = '';
+}
+
+// Cierra al hacer click fuera del contenedor
+function cerrarPopupOverlay(event, id) {
+    if (event.target === document.getElementById(id)) {
+        cerrarPopup(id);
+    }
+}
+
+// Cierra con la tecla Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.popup__overlay.activo').forEach(p => {
+            p.classList.remove('activo');
+        });
+        document.body.style.overflow = '';
+    }
+});
+
+// Para activar los videos con su título
+
+// if (window.innerWidth < 730) {
+//   var tag = document.createElement('script');
+//   tag.src = "https://www.youtube.com/iframe_api";
+//   var firstScriptTag = document.getElementsByTagName('script')[0];
+//   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+//   var player1, player2, player3;
+
+//   function onYouTubeIframeAPIReady() {
+//     player1 = new YT.Player('video1');
+//     player2 = new YT.Player('video2');
+//     player3 = new YT.Player('video3');
+//   }
+
+//   // 4. Funciones para cada botón
+//   function iniciarVideoA() {
+//     player1.playVideo();
+//   }
+
+//   function iniciarVideoB() {
+//     player2.playVideo();
+//   }
+
+//   function iniciarVideoC() {
+//     player3.playVideo();
+//   }
+// }
+
+/* ═══════════════════════════════════════════════════════
+   PTAR — Carrusel móvil con flechas y dots en la parte baja
+   Reemplaza el JS anterior del carrusel PTAR.
+═══════════════════════════════════════════════════════ */
+ 
+document.addEventListener("DOMContentLoaded", function () {
+    const contenedor = document.querySelector('.PTARcelular__tarjetas');
+    const tarjetas   = document.querySelectorAll('.PTARcelular__tarjetas .PTARcelular__tarjeta');
+    const prevBtn    = document.querySelector('.PTARcelular__prevBtn');
+    const nextBtn    = document.querySelector('.PTARcelular__nextBtn');
+ 
+    if (!contenedor || !tarjetas.length || !prevBtn || !nextBtn) return;
+ 
+    let currentIndex = 0;
+ 
+    /* ── Crear barra de navegación inferior ── */
+    const navBar = document.createElement('div');
+    navBar.className = 'ptar-nav-bar';
+    navBar.innerHTML = `
+        <div class="ptar-dots"></div>
+    `;
+ 
+    /* Mover los botones al navBar */
+    const dotsWrap = navBar.querySelector('.ptar-dots');
+    navBar.insertBefore(prevBtn, dotsWrap);
+    navBar.appendChild(nextBtn);
+ 
+    /* Insertar navBar después del contenedor de tarjetas */
+    contenedor.parentNode.insertBefore(navBar, contenedor.nextSibling);
+ 
+    /* ── Generar dots según número de tarjetas ── */
+    const dots = [];
+    tarjetas.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'ptar-dot' + (i === 0 ? ' activo' : '');
+        dot.addEventListener('click', () => irA(i));
+        dotsWrap.appendChild(dot);
+        dots.push(dot);
+    });
+ 
+    /* ── Mostrar tarjeta activa ── */
+    function mostrar(index) {
+        tarjetas.forEach((t, i) => {
+            t.style.display = i === index ? 'grid' : 'none';
+        });
+        dots.forEach((d, i) => {
+            d.classList.toggle('activo', i === index);
+        });
+        currentIndex = index;
+    }
+ 
+    function irA(index) {
+        mostrar((index + tarjetas.length) % tarjetas.length);
+    }
+ 
+    mostrar(0);
+ 
+    nextBtn.addEventListener('click', () => irA(currentIndex + 1));
+    prevBtn.addEventListener('click', () => irA(currentIndex - 1));
+});
+
+
+// FUNCIÓN PARA ANIMAR GIFS
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Configuración de cada GIF con su respectiva imagen estática
+//   const configuracionGIFs = [
+//     {
+//       id: 'gifTrofeo',
+//       gifSrc: '../gifs/20_Aniversario.gif',
+//       staticSrc: '../gifs/plantaTemporal.jpg',
+//       duration: 4000 // Duración aproximada del GIF en ms
+//     },
+//     {
+//       id: 'gifTubo',
+//       gifSrc: '../gifs/Sistema_Irrigacion.gif',
+//       staticSrc: '../gifs/Sistema_Irrigacion_psd.png',
+//       duration: 1600
+//     },
+//     {
+//       id: 'gifLluvia',
+//       gifSrc: '../gifs/nube.gif',
+//       staticSrc: '../gifs/plantaTemporal.jpg',
+//       duration: 4000
+//     },
+//     {
+//       id: 'gifGota',
+//       gifSrc: '../gifs/agua_gotas.gif',
+//       staticSrc: '../gifs/plantaTemporal.jpg',
+//       duration: 4000
+//     },
+//     {
+//       id: 'gifPlanta',
+//       gifSrc: '../gifs/planta.gif',
+//       staticSrc: '../gifs/plantaTemporal.jpg',
+//       duration: 4000
+//     },
+
+//   ];
+
+//   configuracionGIFs.forEach(config => {
+//     const elemento = document.getElementById(config.id);
+//     if (!elemento) return;
+
+//     // Estado para controlar si ya se mostró el GIF
+//     let yaSeHaMostrado = false;
+
+//     // Guardar la fuente original (estática) que está en el HTML
+//     const originalStaticSrc = elemento.src;
+
+//     const observer = new IntersectionObserver((entries) => {
+//       entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//           if (!yaSeHaMostrado) {
+//             // Cambiar temporalmente al GIF, elimina el problema de cargar desde el cache
+//             elemento.src = config.gifSrc + '?t=' + Date.now();
+
+//             // Después de la duración del GIF, cambiar a la imagen estática
+//             setTimeout(() => {
+//               elemento.src = config.staticSrc;
+//               yaSeHaMostrado = true;
+//             }, config.duration);
+//           }
+//         } else {
+//           // Cuando el elemento sale de la vista, resetear para la próxima vez
+//           yaSeHaMostrado = false;
+//           elemento.src = originalStaticSrc;
+//         }
+//       });
+//     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+//     observer.observe(elemento);
+
+//     // Inicializar con la imagen estática
+//     elemento.src = originalStaticSrc;
+//   });
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const imgPrincipal = document.querySelector('.imagenPrincipal img');
+    if (!imgPrincipal) return;
+
+    if (imgPrincipal.complete) {
+        // Ya estaba en caché, mostrar de inmediato
+        imgPrincipal.classList.add('cargada');
+    } else {
+        imgPrincipal.addEventListener('load', function () {
+            imgPrincipal.classList.add('cargada');
+        });
+    }
+});

@@ -1,0 +1,3943 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --blanco: #fcfcfc;
+    --negro: rgb(63, 63, 62);
+    --gris: #757575;
+    --grisOscuro: rgb(63, 63, 62);
+    --rojo: rgb(199, 19, 49);
+    --rojoIconos: rgb(194, 19, 48);
+    --rojoIconosClaro: rgb(219, 5, 40);
+}
+
+body {
+    font-family: 'Montserrat';
+    /* max-width: 140rem; */
+}
+
+
+/* IMAGEN PRINCIPAL */
+
+.imagenPrincipal {
+    padding: 0 2rem;
+    height: 43rem;
+    overflow: hidden;
+}
+
+.imagenPrincipal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 20% 73%;
+    display: block;
+}
+
+/* ANIMACIÓN PARA IMAGENES */
+
+/* Estado base - necesario para la transición */
+.kenburns-top-left {
+    transform-origin: 16% 16%;
+    transform: scale(1) translate(0, 0);
+    will-change: transform;
+}
+
+/* Estado activo - aplica la animación */
+.kenburns-top-left-active {
+    animation: kenburns-top-left 5s ease-out forwards;
+}
+
+@keyframes kenburns-top-left {
+    0% {
+        transform: scale(1) translate(0, 0);
+        transform-origin: 16% 16%;
+    }
+
+    100% {
+        transform: scale(1.2) translate(-20px, -15px);
+        transform-origin: top left;
+    }
+}
+
+@media (min-width: 961px) {
+    .imagenPrincipal img {
+        border-radius: 4rem 4rem 0 0;
+    }
+}
+
+/* PRESENTACION Y CONTACTO */
+
+/* IMAGEN */
+
+.presentacionYContacto {
+    display: grid;
+    width: 100%;
+    padding: 0 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 980px) {
+    .presentacionYContacto__imagen {
+        display: none;
+    }
+}
+
+@media (min-width: 981px) {
+    .presentacionYContacto {
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .presentacionYContacto__imagen {
+        padding: 0 1rem;
+        /* height: 62.5rem; */
+        overflow: hidden;
+        display: block;
+    }
+
+    .presentacionYContacto__imagen img {
+        width: 100%;
+        height: 100%;
+        border-radius: .5rem;
+        object-fit: cover;
+        object-position: 60% 73%;
+    }
+}
+
+@media (min-width: 1181px) {
+    .presentacionYContacto__imagen {
+        height: 62.5rem;
+    }
+}
+
+/* CONTACTO */
+
+@media (min-width: 961px) {
+    .contactoTAR {
+        margin-left: 5rem;
+    }
+}
+
+@media (min-width: 511px) {
+    .contactoTAR__numeroYCorreo {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .contactoTAR__footer {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .contactoTAR__logoPlantaTratamiento {
+        justify-content: end;
+        display: block;
+    }
+}
+
+@media (max-width: 510px) {
+
+    .contactoTAR__titulo,
+    .contactoTAR__nombre {
+        text-align: center;
+    }
+
+    .contactoTAR__numeroYCorreo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        margin: 2rem 0;
+    }
+
+    .contactoTAR__footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 2rem 0;
+    }
+
+    .contactoTAR__logoPlantaTratamiento {
+        margin: 3rem 0;
+        justify-content: center;
+        margin-right: 1rem;
+        margin-left: 5rem;
+    }
+
+    .contactoTAR__ubicacionYHorarios div {
+        justify-self: left;
+    }
+}
+
+
+.contactoTAR svg:not(.contactoTAR__logoPlantaTratamiento svg) {
+    height: 2rem !important;
+}
+
+.contactoTAR__titulo {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    line-height: 4.5rem;
+}
+
+.contactoTAR__nombre {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--grisOscuro);
+    margin: 1rem 0 .5rem 0;
+}
+
+.contactoTAR__separador {
+    border-bottom: .2rem var(--rojoIconos) solid;
+}
+
+/* .contactoTAR__numeroYCorreo {
+    display: grid;
+} */
+
+.contactoTAR__telefono,
+.contactoTAR__correo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    margin-left: 3rem;
+    color: var(--grisOscuro);
+}
+
+.contactoTAR__correo {
+    justify-content: left;
+}
+
+
+.contactoTAR__presentacion {
+    color: var(--grisOscuro);
+    font-size: 1.2em;
+    text-align: justify;
+    margin: 4rem 3rem;
+}
+
+/* .contactoTAR__footer {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+} */
+
+.contactoTAR__ubicacionYHorarios div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    margin-left: 3rem;
+    color: var(--grisOscuro);
+}
+
+.contactoTAR__logoPlantaTratamiento {
+    display: flex;
+    align-items: end;
+    /* justify-content: end; */
+    /* margin-right: 1rem; */
+    margin-bottom: 2rem;
+}
+
+.contactoTAR__logoPlantaTratamiento svg {
+    max-height: 6rem;
+}
+
+/* PTAR */
+
+@media (min-width: 1140px) {
+    .PTARcelular {
+        display: none;
+    }
+
+    .PTAR {
+        display: block;
+    }
+}
+
+@media (max-width: 1139px) {
+    .PTARcelular {
+        display: block;
+    }
+
+    .PTAR {
+        display: none;
+    }
+}
+
+.PTAR__titulo {
+    min-height: 15rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    background-image: url(../IMAGES/SolicitudAD/plantas.png);
+    position: relative;
+}
+
+.PTAR__titulo p {
+    font-weight: 700;
+    font-size: 2em;
+    color: var(--grisOscuro);
+    position: absolute;
+    top: 5rem;
+    left: 8rem;
+    background-color: white;
+    border-radius: 4rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 535px) {
+    .PTARcelular__titulo {
+        margin-bottom: 6rem;
+    }
+}
+
+
+@media (max-width: 534px) {
+    .PTARcelular__titulo {
+        margin-bottom: 12rem;
+        text-align: center;
+    }
+}
+
+.PTARcelular__titulo {
+    min-height: 8rem;
+    margin-top: -5rem;
+    position: relative;
+}
+
+
+.PTARcelular__titulo p {
+    font-weight: 700;
+    font-size: 2em;
+    color: var(--grisOscuro);
+    position: absolute;
+    top: 5rem;
+    background-color: white;
+    border-radius: 4rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 920px) {
+    .PTARcelular__titulo p {
+        left: 4rem;
+    }
+}
+
+/* @media (max-width: 920px) {
+    .PTARcelular__titulo p {}
+} */
+
+
+/* TARJETAS */
+
+.PTAR__tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    margin: 0 4rem;
+    column-gap: 1rem;
+    row-gap: 2rem;
+}
+
+.tarjetas__izquierda,
+.tarjetas__derecha {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    height: 38rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.informacion__izquierda {
+    /* border: .1rem  solid red; */
+    position: absolute;
+    width: 45%;
+    min-height: 50%;
+    background-color: white !important;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    top: 22%;
+    left: 35%;
+}
+
+.informacion__derecha {
+    /* border: .1rem  solid red; */
+    position: absolute;
+    width: 45%;
+    min-height: 50%;
+    background-color: white !important;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    top: 22%;
+    left: 25%;
+}
+
+.informacion__titulo {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    text-transform: uppercase;
+
+}
+
+.informacion__texto {
+    color: var(--gris);
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.tarjetas__izquierda img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.tarjetas__2 img {
+    object-position: 40% 0;
+}
+
+.tarjetas__derecha img {
+    grid-column: 2/3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.tarjetas__3 img {
+    object-position: 38% 10%;
+}
+
+.tarjetas__4 img {
+    object-position: 18% 10%;
+}
+
+
+/*       TARJETAS__CELULAR      */
+
+.PTARcelular__tarjetas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* border: red solid .1rem; */
+    margin: auto;
+}
+
+@media (min-width: 1090px) {
+    .PTARcelular__tarjeta {
+        height: 60rem;
+    }
+}
+
+@media (min-width: 980px) and (max-width:1089px) {
+    .PTARcelular__tarjeta {
+        height: 59rem;
+    }
+}
+
+@media (min-width: 940px) and (max-width:979px) {
+    .PTARcelular__tarjeta {
+        height: 55rem;
+    }
+}
+
+@media (min-width: 850px) and (max-width:939px) {
+    .PTARcelular__tarjeta {
+        height: 50rem;
+    }
+}
+
+@media (min-width: 809px) and (max-width:849px) {
+    .PTARcelular__tarjeta {
+        height: 40rem;
+    }
+}
+
+@media (min-width: 650px) and (max-width:808px) {
+    .PTARcelular__tarjeta {
+        height: 38rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 649px) {
+    .PTARcelular__tarjeta {
+        height: 35rem;
+    }
+}
+
+@media (min-width: 430px) and (max-width: 599px) {
+    .PTARcelular__tarjeta {
+        height: 30rem;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 429px) {
+    .PTARcelular__tarjeta {
+        height: 34rem;
+    }
+}
+
+@media (min-width: 360px) {
+    .PTARcelular__tarjeta {
+        grid-template-columns: 60% 40%;
+    }
+}
+
+.PTARcelular__tarjeta {
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.PTARcelular__tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+@media (min-width: 650px) {
+    .informacionCelular {
+        width: 65%;
+        min-height: 50%;
+        top: 22%;
+        left: 35%;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 649px) {
+    .informacionCelular {
+        width: 65%;
+        min-height: 30%;
+        top: 17%;
+        left: 35%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 549px) {
+    .informacionCelular {
+        width: 65%;
+        min-height: 30%;
+        top: 7%;
+        left: 35%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+    .informacionCelular {
+        width: 70%;
+        min-height: 30%;
+        top: 10%;
+        left: 30%;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 399px) {
+    .informacionCelular {
+        width: 70%;
+        min-height: 30%;
+        top: 6%;
+        left: 30%;
+    }
+}
+
+@media (max-width: 359px) {
+    .informacionCelular {
+        width: 86%;
+        min-height: 30%;
+        top: 7%;
+        left: 7%;
+    }
+}
+
+.informacionCelular {
+    position: absolute;
+    background-color: white !important;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.informacionCelular__titulo {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--grisOscuro);
+}
+
+
+@media (min-width: 320px) and (max-width: 428px) {
+    .informacionCelular__titulo {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 429px) {
+    .informacionCelular__titulo {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 500px) {
+    .informacionCelular__titulo {
+        font-size: 1.5em;
+    }
+}
+
+/* ANIMACIÓN TEXTO */
+
+/* Estado INICIAL (requerido para la animación) */
+.focus-in-contract-bck {
+    opacity: 1;
+    display: inline-block;
+    /* Necesario para letter-spacing en elementos inline */
+}
+
+/* Estado ACTIVO (aquí va la animación) */
+.focus-in-contract-bck-active {
+    -webkit-animation: focus-in-contract-bck 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-contract-bck 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* Keyframes (igual que los tuyos) */
+@-webkit-keyframes focus-in-contract-bck {
+    0% {
+        letter-spacing: 2em;
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(12px);
+        transform: translateZ(12px);
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes focus-in-contract-bck {
+    0% {
+        letter-spacing: 2em;
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(12px);
+        transform: translateZ(12px);
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+
+/* ANIMACIÓN TEXTO DESDE ENMEDIO */
+
+.focus-in-expand-fwd {
+    opacity: 1;
+    display: inline-block;
+    will-change: transform, filter, opacity;
+}
+
+.focus-in-expand-fwd-active {
+    -webkit-animation: focus-in-expand-fwd 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+    animation: focus-in-expand-fwd 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+}
+
+@-webkit-keyframes focus-in-expand-fwd {
+    0% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-800px);
+        transform: translateZ(-800px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes focus-in-expand-fwd {
+    0% {
+        letter-spacing: -0.5em;
+        transform: translateZ(-800px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+
+/* Estado INICIAL - obligatorio */
+.focus-in-contract {
+    opacity: 1;
+    display: inline-block;
+    /* Necesario para letter-spacing */
+    will-change: opacity, letter-spacing;
+    /* Optimización */
+}
+
+/* Estado ACTIVO - contiene la animación */
+.focus-in-contract-active {
+    letter-spacing: 1em;
+    animation: focus-in-contract 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+}
+
+/* Keyframes (mejorados) */
+@keyframes focus-in-contract {
+    to {
+        letter-spacing: normal;
+        opacity: 1;
+    }
+}
+
+
+
+.informacionCelular__texto {
+    color: var(--gris);
+    margin-top: 1rem;
+}
+
+.PTARcelular__boton {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+
+}
+
+.PTARcelular__prevBtn,
+.PTARcelular__nextBtn {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+@media (min-width: 809px) {
+    .PTARcelular__boton svg {
+        min-width: 7rem;
+    }
+
+    .informacionCelular__texto {
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 750px) and (max-width:808px) {
+    .PTARcelular__boton svg {
+        min-width: 6rem;
+    }
+
+    .informacionCelular__texto {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 320px) and (max-width:749px) {
+    .informacionCelular__texto {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 430px) and (max-width:749px) {
+    .PTARcelular__boton svg {
+        min-width: 5rem;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 429px) {
+    .PTARcelular__boton svg {
+        min-width: 4rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .PTARcelular__prevBtn {
+        padding: 10rem 2rem;
+    }
+
+    .PTARcelular__nextBtn {
+        padding: 8rem 2rem;
+    }
+}
+
+@media (min-width: 499px) and (max-width: 599px) {
+    .PTARcelular__prevBtn {
+        padding: 10rem .5rem;
+    }
+
+    .PTARcelular__nextBtn {
+        padding: 8rem .5rem;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 429px) {
+
+    .PTARcelular__prevBtn,
+    .PTARcelular__nextBtn {
+        padding: 10rem .5rem;
+    }
+}
+
+.PTARcelular__boton:hover {
+    cursor: pointer;
+}
+
+.PTARcelular__boton:hover .PTARcelular__svg {
+    fill: var(--rojoIconosClaro);
+}
+
+.PTARcelular__boton svg {
+    fill: var(--rojoIconos);
+}
+
+/* .tarjetasCelular__1 img {} */
+
+.tarjetasCelular__2 img {
+    object-position: 40% 0;
+}
+
+.tarjetasCelular__3 img {
+    object-position: 38% 10%;
+}
+
+.tarjetasCelular__4 img {
+    object-position: 18% 10%;
+}
+
+
+.tarjeta a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tarjeta a:hover {
+    scale: 1.05;
+}
+
+.tarjeta {
+    min-width: 28rem;   /* antes: 22rem */
+    max-width: 30rem;   /* antes: 24rem */
+    padding: 2.2rem 2rem 1.8rem;
+}
+
+.tarjeta a img {
+    width: 20rem;
+    height: 20rem;
+    /************************************************* quitar al poner imagenes cuadradas*/
+    border-radius: 50%;
+}
+
+.tarjeta a .titulo {
+    color: var(--negro);
+    font-size: 2.3rem;
+}
+
+.tarjeta a .descripcion {
+    color: var(--negro);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.panelTablet {
+    display: none;
+}
+
+@media (min-width: 501px) and (max-width: 900px) {
+    .panelTablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 2rem;
+        column-gap: 2rem;
+    }
+
+    .panelIRS,
+    .panelGestionSostenibleA,
+    .panelGestionAreasV,
+    .panelDisminucionGasesEI,
+    .panelConsumoResponsable {
+        cursor: pointer;
+    }
+
+    .panelIRS:hover .panelISR__titulo,
+    .panelGestionSostenibleA:hover .panelGestionSostenibleA__titulo,
+    .panelGestionAreasV:hover .panelGestionAreasV__titulo,
+    .panelDisminucionGasesEI:hover .panelDisminucionGasesEI__titulo,
+    .panelConsumoResponsable:hover .panelConsumoResponsable__titulo {
+        color: var(--rojoIconosClaro);
+    }
+}
+
+.tarjetaT {
+    background-color: rgb(255, 255, 255);
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 1.5rem;
+    box-shadow: 0px 0.9rem 1.4rem rgba(0, 0, 0, 0.30), 0px 0.5rem 1.2rem rgba(0, 0, 0, 0.22);
+    /* margin-right: 3rem; */
+    max-height: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    /* max-width: 44rem; */
+
+    /* margin: auto 1rem; */
+    margin-bottom: 3rem;
+    /* min-height: 55rem; */
+    display: flex;
+}
+
+.tarjetaT a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.tarjetaT:hover {
+    scale: 1.05;
+}
+
+.tarjetaT a img {
+    width: 18rem;
+    border-radius: 50%;
+}
+
+.tarjetaT a .titulo {
+    color: var(--negro);
+    font-size: 1.4em;
+    margin: 2rem auto;
+}
+
+.tarjetaT a .descripcion {
+    color: var(--negro);
+    font-size: 1em;
+    text-align: center;
+}
+
+.ocultarPanelTablet {
+    opacity: 0;
+    transform: scaleY(0);
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease;
+}
+
+.mostrarPanelTablet {
+    opacity: 1;
+    transform: scaleY(1);
+    height: auto;
+    transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease;
+}
+
+/* ═══════════════════════════════════════════════════════
+   PTAR — Barra de navegación inferior (flechas + dots)
+   Pegar al final del CSS principal.
+═══════════════════════════════════════════════════════ */
+ 
+/* Ocultar los botones en su posición original dentro del flex
+   (el JS los mueve al navBar, pero por si acaso) */
+.PTARcelular__tarjetas .PTARcelular__prevBtn,
+.PTARcelular__tarjetas .PTARcelular__nextBtn {
+    display: none !important;
+}
+ 
+/* ── Barra inferior ── */
+.ptar-nav-bar {
+    display:         flex;
+    align-items:     center;
+    justify-content: center;
+    gap:             1.2rem;
+    margin-top:      1.5rem;
+    margin-bottom:   1rem;
+    padding:         0 1rem;
+}
+ 
+/* ── Dots ── */
+.ptar-dots {
+    display:     flex;
+    gap:         0.6rem;
+    align-items: center;
+}
+ 
+.ptar-dot {
+    width:         0.75rem;
+    height:        0.75rem;
+    border-radius: 50%;
+    background:    #d6d0d0;
+    border:        0.12rem solid transparent;
+    cursor:        pointer;
+    transition:    background 0.2s ease, transform 0.2s ease;
+    flex-shrink:   0;
+}
+ 
+.ptar-dot.activo {
+    background:  var(--rojo, rgb(199, 19, 49));
+    transform:   scale(1.2);
+    border-color: var(--rojo, rgb(199, 19, 49));
+}
+ 
+.ptar-dot:hover:not(.activo) {
+    background: #bbb;
+}
+ 
+/* ── Botones en el navBar — heredan .btn-nav-ptar ── */
+.ptar-nav-bar .btn-nav-ptar {
+    /* Asegurar que no lleven padding heredado */
+    padding: 0 !important;
+    /* Tamaño estándar del proyecto */
+    width:   2.8rem !important;
+    height:  2.8rem !important;
+}
+
+.PTARcelular__tarjetas {
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+/** GALERIA DE IMAGENES
+
+/* ── CONTENEDOR PRINCIPAL ── */
+.galeria {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;        /* centra el bloque */
+    padding: 0 2rem;       /* espacio a izquierda y derecha */
+}
+
+.galeria__etiqueta {
+    font-size: 0.8em;
+    color: var(--rojoIconos);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    padding-left: 0.2rem;
+}
+
+/* ── CARRUSEL ── */
+.galeria__carrusel {
+    position: relative;
+    width: 100%;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    background: #222;
+    /* proporción 16:9 */
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 0.6rem 2.5rem rgba(0,0,0,0.18);
+}
+
+/* ── SLIDES ── */
+.galeria__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+}
+
+.galeria__slide.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Imagen de fondo que cubre todo */
+.galeria__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gradiente sutil para mejorar legibilidad de la tarjeta */
+.galeria__slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom right,
+        transparent 30%,
+        rgba(0,0,0,0.25) 100%
+    );
+    pointer-events: none;
+}
+
+/* ── TARJETA DE DESCRIPCIÓN ── */
+.galeria__info {
+    position: absolute;
+    bottom: 1.8rem;
+    right: 1.8rem;
+    width: min(42%, 340px);
+    background: rgba(255,255,255,0.97);
+    border-radius: 1rem;
+    padding: 1.5rem 1.8rem 1.6rem;
+    box-shadow: 0 0.3rem 1.5rem rgba(0,0,0,0.15);
+    z-index: 2;
+}
+
+.galeria__info-titulo {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    margin-bottom: 0.7rem;
+    line-height: 1.2;
+}
+
+.galeria__info-separador {
+    width: 3rem;
+    height: 0.18rem;
+    background-color: var(--rojoIconos);
+    margin-bottom: 0.9rem;
+    border-radius: 1rem;
+}
+
+.galeria__info-texto {
+    font-size: 0.82em;
+    color: var(--gris);
+    line-height: 1.65;
+    text-align: justify;
+}
+
+.galeria__info-texto p + p {
+    margin-top: 0.7rem;
+}
+
+/* ── BARRA INFERIOR: DOTS ── */
+.galeria__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+}
+
+.galeria__dot {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background-color: #c8c8c8;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.galeria__dot.activo {
+    background-color: var(--rojoIconos);
+    transform: scale(1.2);
+}
+
+/* ── BARRA DE PROGRESO ── */
+.galeria__progreso {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.22rem;
+    background-color: var(--rojoIconos);
+    width: 0%;
+    z-index: 3;
+    transition: width linear;
+}
+
+/* ═══════════════════════════════════════════════════════
+   PARCHE — Galería móvil: texto arriba, imagen abajo
+   Pegar al final del CSS principal.
+═══════════════════════════════════════════════════════ */
+ 
+@media (max-width: 640px) {
+ 
+    /* El carrusel deja de ser un contenedor 16:9 con overflow hidden
+       y pasa a ser un bloque de flujo normal */
+    .galeria__carrusel {
+        aspect-ratio: unset !important;
+        overflow:     visible !important;
+        background:   transparent !important;
+        box-shadow:   none !important;
+        border-radius: 0 !important;
+    }
+ 
+    /* Cada slide ocupa todo el ancho y apila texto + imagen */
+    .galeria__slide {
+        position: static !important;   /* sale del stack absoluto */
+        opacity:  0;
+        display:  none;
+        flex-direction: column;
+        gap: 1rem;
+        transition: opacity 0.4s ease;
+    }
+ 
+    .galeria__slide.activo {
+        display:  flex !important;
+        opacity:  1 !important;
+        pointer-events: auto !important;
+    }
+ 
+    /* Quitar el gradiente oscuro del pseudo-elemento */
+    .galeria__slide::after {
+        display: none !important;
+    }
+ 
+    /* ── Caja de texto: arriba, ancho completo, sin posicionamiento ── */
+    .galeria__info {
+        position:     static !important;
+        width:        100% !important;
+        top:    auto !important;
+        right:  auto !important;
+        bottom: auto !important;
+        left:   auto !important;
+        background:   white !important;
+        border-radius: 1rem !important;
+        padding:      1.2rem 1.4rem !important;
+        box-shadow:   0 0.2rem 0.8rem rgba(0, 0, 0, 0.08) !important;
+        order: 1;     /* texto primero */
+        box-sizing: border-box;
+    }
+ 
+    /* ── Imagen: debajo del texto ── */
+    .galeria__slide img {
+        order:        2;  /* imagen después */
+        width:        100%;
+        height:       220px;
+        object-fit:   cover;
+        border-radius: 1rem;
+        display:      block;
+    }
+ 
+    /* Barra de progreso: reposicionar al fondo de la imagen */
+    .galeria__progreso {
+        position: static !important;
+        order:    3;
+        width:    0%;
+        height:   0.22rem;
+        background-color: var(--rojoIconos);
+        border-radius: 1rem;
+        margin-top: 0.4rem;
+        transition: width linear;
+    }
+ 
+    /* Tamaño de texto */
+    .galeria__info-titulo { font-size: 1.2em; }
+    .galeria__info-texto  { font-size: 0.82em; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+    .galeria__info {
+        width: calc(100% - 2.4rem);
+        right: 1.2rem;
+        bottom: 1.2rem;
+        padding: 1.2rem 1.4rem;
+    }
+    .galeria__info-titulo { font-size: 1.1em; }
+    .galeria__info-texto  { font-size: 0.78em; }
+}
+
+.organigrama__descripcion {
+    margin-top: 2.5rem;
+    text-align: justify;
+    max-width: 55rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-10%);
+}
+
+.organigrama__descripcion p {
+    font-size: 0.95em;
+    color: var(--grisOscuro);
+    line-height: 1.7;
+    margin: 0 0 0.8rem 0;
+}
+ 
+/* ── SABÍAS QUÉ ─────────────────────────────────────────────────── */
+ 
+.sabiasQue {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin: 4rem 4rem 6rem 4rem;
+    align-items: start;
+}
+ 
+.sabiasQue__titulo {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    margin-bottom: 2rem;
+}
+ 
+/* ── GRID DE TARJETAS ── */
+.sabiasQue__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1.5rem;
+}
+ 
+/* ── TARJETA DATO ── */
+.dato {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+ 
+.dato__icono {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    background-color: #e4e4e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.9rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+ 
+.dato__icono img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+ 
+.dato__icono svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 0.45;
+}
+ 
+.dato__titulo {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+}
+ 
+.dato__separador {
+    width: 2.2rem;
+    height: 0.15rem;
+    background-color: var(--rojoIconos);
+    border-radius: 1rem;
+    margin-bottom: 0.45rem;
+    flex-shrink: 0;
+}
+ 
+.dato__descripcion {
+    font-size: 0.8em;
+    color: var(--gris);
+    line-height: 1.55;
+}
+ 
+/* ── LADO DERECHO ── */
+.sabiasQue__derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+ 
+.sabiasQue__tituloD {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    line-height: 1.35;
+}
+ 
+.sabiasQue__imagen-wrap {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #d0d0d0;
+    min-height: 19rem;
+}
+ 
+.sabiasQue__imagen-wrap img {
+    width: 100%;
+    height: 100%;
+    min-height: 19rem;
+    object-fit: cover;
+    display: block;
+    border-radius: 1rem;
+}
+ 
+.sabiasQue__imagen-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 30%, rgba(255,255,255,0.85) 58%);
+    border-radius: 1rem;
+    pointer-events: none;
+}
+ 
+.sabiasQue__texto {
+    position: absolute;
+    top: 50%;
+    right: 1.8rem;
+    transform: translateY(-50%);
+    width: 52%;
+    z-index: 2;
+}
+ 
+.sabiasQue__texto p {
+    font-size: 0.85em;
+    color: var(--grisOscuro);
+    line-height: 1.7;
+    text-align: justify;
+}
+ 
+.sabiasQue__texto p + p {
+    margin-top: 0.9rem;
+}
+ 
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    .sabiasQue {
+        grid-template-columns: 1fr;
+        margin: 3rem 2rem 4rem 2rem;
+        gap: 2.5rem;
+    }
+}
+ 
+@media (max-width: 560px) {
+    .sabiasQue__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem 0.8rem;
+    }
+    .sabiasQue__texto {
+        width: 55%;
+        right: 1rem;
+    }
+}
+ 
+@media (max-width: 400px) {
+    .sabiasQue__grid { grid-template-columns: 1fr; }
+    .sabiasQue__imagen-wrap::after {
+        background: linear-gradient(to top, rgba(255,255,255,0.92) 40%, transparent 100%);
+    }
+    .sabiasQue__texto {
+        position: static;
+    }
+}
+
+/* PGIRS*/
+.TituloP2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.TituloP2 h1{
+    font-family: sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    width: 30%;
+}
+.TituloP2 .inline {
+    position: relative; /* Necesario para posicionar elementos internos */
+    width: 100%; /* Ajusta según lo necesario */
+    height: 50px; /* Define una altura para que se note el efecto */
+}
+
+.TituloP2 .inline::after {
+    content: ''; /* Crea una pseudo-línea */
+    position: absolute;
+    top: 170%; /* Posiciona al centro verticalmente */
+    left: 0;
+    width: 100%;
+    height: 5px; /* Grosor de la línea */
+    background-color: rgb(199, 19, 49); /* Color de la línea */
+    transform: translateY(-100%); /* Ajusta la posición exactamente en el medio */
+}
+/*Carrucel de Gestion Integral de Residuos*/
+.panelIRS__carrucel {
+    position: relative;
+    display: grid;
+    height: auto;
+}
+
+.EspacioV {
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%; /* Ajusta según necesites */
+    position: absolute;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 0.05));
+    z-index: 1;
+}
+
+.Carrusel {
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    background-color: white;
+    position: relative;
+}
+
+.carrusel-contenedor {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    gap: 20px;
+    animation: mover 150s linear infinite;
+}
+
+/* Animación continua */
+@keyframes mover {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-1000%);
+    }
+}
+
+@media (max-width: 900px){
+    .Carrusel{
+        display: none;
+        height: auto;
+    }
+    .carrusel-contenedor{
+        animation: none;
+        display: none;
+    }
+    .EspacioV{
+        display: none;
+    }
+    .panelIRS__carrucel{
+        height: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .Carrusel{
+        display: none;
+        height: 0px;
+    }
+    .carrusel-contenedor{
+        display: none;
+    }
+    .panelIRS__carrucel{
+        height: 0px;
+    }
+}
+
+.carrusel-contenedor:hover {
+    animation-play-state: paused;
+}
+
+/*PGSA*/
+.TituloP3{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.TituloP3 h1{
+    font-family: sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    width: 30%;
+}
+.TituloP3 .inline2 {
+    position: relative; /* Necesario para posicionar elementos internos */
+    width: 100%; /* Ajusta según lo necesario */
+    height: 50px; /* Define una altura para que se note el efecto */
+}
+
+.TituloP3 .inline2::after {
+    content: ''; /* Crea una pseudo-línea */
+    position: absolute;
+    top: 170%; /* Posiciona al centro verticalmente */
+    left: 0;
+    width: 100%;
+    height: 5px; /* Grosor de la línea */
+    background-color: rgb(199, 19, 49); /* Color de la línea */
+    transform: translateY(-100%); /* Ajusta la posición exactamente en el medio */
+}
+
+
+.panelGestionSostenibleA__carrucel {
+    position: relative;
+    display: grid;
+    height: auto;
+}
+
+.EspacioV2 {
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%; /* Ajusta según necesites */
+    position: absolute;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 0.05));
+    z-index: 1;
+}
+
+.Carrusel2 {
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    background-color: white;
+    position: relative;
+}
+
+.carrusel2-contenedor {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    gap: 20px;
+    animation: mover2 150s linear infinite;
+}
+
+/* Animación continua */
+@keyframes mover2 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-1000%);
+    }
+}
+
+@media (max-width: 900px){
+    .Carrusel2{
+        display: none;
+        height: auto;
+    }
+    .carrusel2-contenedor{
+        animation: none;
+        display: none;
+    }
+    .EspacioV2{
+        display: none;
+    }
+    .panelGestionSostenibleA__carrucel{
+        height: auto;
+    }
+}
+
+.carrusel2-contenedor:hover {
+    animation-play-state: paused;
+}
+
+
+/*PGAV*/
+.panelGestionAreasV__carrucel{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); /* Cuatro columnas inicialmente */
+    grid-template-rows: auto auto;
+    align-items: stretch;
+    padding-right: 1.5rem;
+}
+
+#EspacioV3:hover{
+    border: white 0px solid;
+}
+
+.tarjeta21{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 19px 34px rgba(0, 0, 0, 0.30), 0px 15px 12px rgba(0, 0, 0, 0.22);
+    margin-left: 30px;
+    margin-bottom: 30px;
+    /*PP*/
+    max-width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+.tarjeta21 a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+}
+
+.tarjeta21 a:hover {
+    scale: 1.05;
+}
+
+
+.tarjeta21 a img {
+    width: 20rem;
+    height: 20rem;
+    /************************************************* quitar al poner imagenes cuadradas*/
+    border-radius: 50%;
+}
+
+.tarjeta21 a .titulo {
+    color: var(--negro);
+    font-size: 2.3rem;
+}
+
+.tarjeta21 a .descripcion {
+    color: var(--negro);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/* Agregar borde Rojo a las tarjetas faltantes */
+.borde-rojo2 {
+    border: 2px solid red;
+    /* Define el borde rojo */
+    transition: border 0.3s ease;
+    /* Suaviza el cambio */
+    box-shadow: 0px 4px 8px rgba(190, 45, 55, 0.9);
+}
+
+/* Checar el acomodo de las tarjetas en 915px*/
+@media (min-width: 501px) and (max-width: 900px) {
+    .tarjeta21 {
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+        text-align: center;
+        border-radius: 15px;
+        box-shadow: 0px 19px 34px rgba(0,0,0,0.30), 0px 15px 12px rgba(0,0,0,0.22);
+        margin-right: 10px;
+        max-height: 100%;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        min-width: 10rem;
+        
+    }
+    .tarjeta21 a img {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+    }
+
+    .tarjeta21 a .titulo {
+        color: var(--negro);
+        font-size: 1.85rem;
+    }
+    .tarjeta21 a .descripcion {
+        color: var(--negro);
+        font-size: 1.15rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 900px){
+    .panelGestionAreasV__carrucel{
+        display: none;
+    }   
+}
+
+/*PDGEI*/
+
+/* ── CARRUSEL ÁRBOLES RESPONSIVO ─────────────────────────────── */
+
+/* Oculto en escritorio, visible en tablet y móvil */
+.arboles__responsivo {
+    display: none;
+}
+
+@media (max-width: 1049px) {
+    /* Ocultar carrusel de escritorio */
+    .arboles {
+        display: none;
+    }
+
+    /* Mostrar sección responsiva */
+    .arboles__responsivo {
+        display: block;
+        padding: 0 1rem;
+    }
+}
+
+/* ── CONTENEDOR MÓVIL (portal) ── */
+.portal_contenedor {
+    display: none; /* se activa solo en móvil */
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+@media (max-width: 649px) {
+    .portal_contenedor {
+        display: flex;
+    }
+}
+
+.portal_viewport {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    min-height: 38rem;
+}
+
+/* ── CONTENEDOR TABLET (procedimiento) ── */
+.procedimiento_contenedor {
+    display: none; /* se activa solo en tablet */
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+@media (min-width: 650px) and (max-width: 1049px) {
+    .procedimiento_contenedor {
+        display: flex;
+    }
+}
+
+.proc_viewport {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    position: relative;
+    min-height: 38rem;
+}
+
+/* ── TARJETAS RESPONSIVAS ── */
+
+/* Estado base: oculta */
+.TarjetaPortal,
+.TarjetaProc {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0px 9px 14px rgba(0,0,0,0.20), 0px 5px 12px rgba(0,0,0,0.14);
+    padding: 2.2rem 2rem 1.8rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    /* Mismo tamaño que tarjeta escritorio */
+    min-width: 28rem;
+    max-width: 30rem;
+}
+
+/* Estado activa: visible */
+.TarjetaPortal.activa,
+.TarjetaProc.activa {
+    display: flex;
+}
+
+.TarjetaPortal:hover,
+.TarjetaProc:hover {
+    transform: scale(1.03);
+}
+
+.TarjetaPortal a,
+.TarjetaProc a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+.TarjetaPortal a img,
+.TarjetaProc a img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.TarjetaPortal .titulo,
+.TarjetaProc .titulo {
+    color: var(--negro);
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+.TarjetaPortal .descripcion,
+.TarjetaProc .descripcion {
+    color: var(--negro);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.TarjetaPortal .tarjeta__separador,
+.TarjetaProc .tarjeta__separador {
+    width: 100%;
+    height: 0.1rem;
+    background-color: #e0e0e0;
+    margin: 0.5rem 0;
+}
+
+/* ── BOTONES DE NAVEGACIÓN RESPONSIVOS ── */
+
+.portal-nav,
+.proc-nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.portal-nav:hover,
+.proc-nav:hover {
+    opacity: 1;
+}
+
+.portal-nav img,
+.proc-nav img {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* Flecha izquierda rotada */
+.portal-nav.prev img,
+.proc-nav.prev img {
+    transform: rotate(180deg);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --blanco: #fcfcfc;
+    --negro: rgb(63, 63, 62);
+    --gris: #757575;
+    --grisOscuro: rgb(63, 63, 62);
+    --rojo: rgb(199, 19, 49);
+    --rojoIconos: rgb(194, 19, 48);
+    --rojoIconosClaro: rgb(219, 5, 40);
+}
+
+body {
+    font-family: 'Montserrat';
+    /* max-width: 140rem; */
+}
+
+
+/* IMAGEN PRINCIPAL */
+
+.imagenPrincipal {
+    padding: 0 2rem;
+    height: 43rem;
+    overflow: hidden;
+}
+
+.imagenPrincipal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 20% 73%;
+    display: block;
+}
+
+/* ANIMACIÓN PARA IMAGENES */
+
+/* Estado base - necesario para la transición */
+.kenburns-top-left {
+    transform-origin: 16% 16%;
+    transform: scale(1) translate(0, 0);
+    will-change: transform;
+}
+
+/* Estado activo - aplica la animación */
+.kenburns-top-left-active {
+    animation: kenburns-top-left 5s ease-out forwards;
+}
+
+@keyframes kenburns-top-left {
+    0% {
+        transform: scale(1) translate(0, 0);
+        transform-origin: 16% 16%;
+    }
+
+    100% {
+        transform: scale(1.2) translate(-20px, -15px);
+        transform-origin: top left;
+    }
+}
+
+@media (min-width: 961px) {
+    .imagenPrincipal img {
+        border-radius: 4rem 4rem 0 0;
+    }
+}
+
+/* PRESENTACION Y CONTACTO */
+
+/* IMAGEN */
+
+.presentacionYContacto {
+    display: grid;
+    width: 100%;
+    padding: 0 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 980px) {
+    .presentacionYContacto__imagen {
+        display: none;
+    }
+}
+
+@media (min-width: 981px) {
+    .presentacionYContacto {
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .presentacionYContacto__imagen {
+        padding: 0 1rem;
+        /* height: 62.5rem; */
+        overflow: hidden;
+        display: block;
+    }
+
+    .presentacionYContacto__imagen img {
+        width: 100%;
+        height: 100%;
+        border-radius: .5rem;
+        object-fit: cover;
+        object-position: 60% 73%;
+    }
+}
+
+@media (min-width: 1181px) {
+    .presentacionYContacto__imagen {
+        height: 62.5rem;
+    }
+}
+
+/* CONTACTO */
+
+@media (min-width: 961px) {
+    .contactoTAR {
+        margin-left: 5rem;
+    }
+}
+
+@media (min-width: 511px) {
+    .contactoTAR__numeroYCorreo {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .contactoTAR__footer {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .contactoTAR__logoPlantaTratamiento {
+        justify-content: end;
+        display: block;
+    }
+}
+
+
+.contactoTAR svg:not(.contactoTAR__logoPlantaTratamiento svg) {
+    height: 2rem !important;
+}
+
+.contactoTAR__titulo {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    line-height: 4.5rem;
+}
+
+.contactoTAR__nombre {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--grisOscuro);
+    margin: 1rem 0 .5rem 0;
+}
+
+.contactoTAR__separador {
+    border-bottom: .2rem var(--rojoIconos) solid;
+}
+
+/* .contactoTAR__numeroYCorreo {
+    display: grid;
+} */
+
+.contactoTAR__telefono,
+.contactoTAR__correo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    margin-left: 3rem;
+    color: var(--grisOscuro);
+}
+
+
+.contactoTAR__presentacion {
+    color: var(--grisOscuro);
+    font-size: 1.2em;
+    text-align: justify;
+    margin: 4rem 3rem;
+}
+
+/* .contactoTAR__footer {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+} */
+
+.contactoTAR__ubicacionYHorarios div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    margin-left: 3rem;
+    color: var(--grisOscuro);
+}
+
+.contactoTAR__logoPlantaTratamiento {
+    display: flex;
+    align-items: end;
+    /* justify-content: end; */
+    /* margin-right: 1rem; */
+    margin-bottom: 2rem;
+}
+
+.contactoTAR__logoPlantaTratamiento svg {
+    max-height: 6rem;
+}
+
+/* PTAR */
+
+@media (min-width: 1140px) {
+    .PTARcelular {
+        display: none;
+    }
+
+    .PTAR {
+        display: block;
+    }
+}
+
+@media (max-width: 1139px) {
+    .PTARcelular {
+        display: block;
+    }
+
+    .PTAR {
+        display: none;
+    }
+}
+
+.PTAR__titulo {
+    min-height: 15rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    background-image: url(../IMAGES/SolicitudAD/plantas.png);
+    position: relative;
+}
+
+.PTAR__titulo p {
+    font-weight: 700;
+    font-size: 2em;
+    color: var(--grisOscuro);
+    position: absolute;
+    top: 5rem;
+    left: 8rem;
+    background-color: white;
+    border-radius: 4rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 535px) {
+    .PTARcelular__titulo {
+        margin-bottom: 6rem;
+    }
+}
+
+
+@media (max-width: 534px) {
+    .PTARcelular__titulo {
+        margin-bottom: 12rem;
+        text-align: center;
+    }
+}
+
+.PTARcelular__titulo {
+    min-height: 8rem;
+    margin-top: -5rem;
+    position: relative;
+}
+
+
+.PTARcelular__titulo p {
+    font-weight: 700;
+    font-size: 2em;
+    color: var(--grisOscuro);
+    position: absolute;
+    top: 5rem;
+    background-color: white;
+    border-radius: 4rem;
+    padding: 0 1rem;
+}
+
+@media (min-width: 920px) {
+    .PTARcelular__titulo p {
+        left: 4rem;
+    }
+}
+
+/* @media (max-width: 920px) {
+    .PTARcelular__titulo p {}
+} */
+
+
+/* TARJETAS */
+
+.PTAR__tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    margin: 0 4rem;
+    column-gap: 1rem;
+    row-gap: 2rem;
+}
+
+.tarjetas__izquierda,
+.tarjetas__derecha {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    height: 38rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.informacion__izquierda {
+    /* border: .1rem  solid red; */
+    position: absolute;
+    width: 45%;
+    min-height: 50%;
+    background-color: white !important;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    top: 22%;
+    left: 35%;
+}
+
+.informacion__derecha {
+    /* border: .1rem  solid red; */
+    position: absolute;
+    width: 45%;
+    min-height: 50%;
+    background-color: white !important;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    top: 22%;
+    left: 25%;
+}
+
+.informacion__titulo {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    text-transform: uppercase;
+
+}
+
+.informacion__texto {
+    color: var(--gris);
+    font-size: 1.27rem;
+    margin-top: 1rem;
+}
+
+.tarjetas__izquierda img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.tarjetas__2 img {
+    object-position: 40% 0;
+}
+
+.tarjetas__derecha img {
+    grid-column: 2/3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.tarjetas__3 img {
+    object-position: 38% 10%;
+}
+
+.tarjetas__4 img {
+    object-position: 18% 10%;
+}
+
+
+/*       TARJETAS__CELULAR      */
+
+.PTARcelular__tarjetas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* border: red solid .1rem; */
+    margin: auto;
+}
+
+@media (min-width: 1090px) {
+    .PTARcelular__tarjeta {
+        height: 60rem;
+    }
+}
+
+@media (min-width: 980px) and (max-width:1089px) {
+    .PTARcelular__tarjeta {
+        height: 59rem;
+    }
+}
+
+@media (min-width: 940px) and (max-width:979px) {
+    .PTARcelular__tarjeta {
+        height: 55rem;
+    }
+}
+
+@media (min-width: 850px) and (max-width:939px) {
+    .PTARcelular__tarjeta {
+        height: 50rem;
+    }
+}
+
+@media (min-width: 809px) and (max-width:849px) {
+    .PTARcelular__tarjeta {
+        height: 40rem;
+    }
+}
+
+@media (min-width: 650px) and (max-width:808px) {
+    .PTARcelular__tarjeta {
+        height: 38rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 649px) {
+    .PTARcelular__tarjeta {
+        height: 35rem;
+    }
+}
+
+@media (min-width: 430px) and (max-width: 599px) {
+    .PTARcelular__tarjeta {
+        height: 30rem;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 429px) {
+    .PTARcelular__tarjeta {
+        height: 34rem;
+    }
+}
+
+@media (min-width: 360px) {
+    .PTARcelular__tarjeta {
+        grid-template-columns: 60% 40%;
+    }
+}
+
+.PTARcelular__tarjeta {
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+.PTARcelular__tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+@media (min-width: 650px) {
+    .informacionCelular {
+        width: 65%;
+        min-height: 50%;
+        top: 22%;
+        left: 35%;
+    }
+}
+
+@media (min-width: 550px) and (max-width: 649px) {
+    .informacionCelular {
+        width: 65%;
+        min-height: 30%;
+        top: 17%;
+        left: 35%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 549px) {
+    .informacionCelular {
+        width: 65%;
+        min-height: 30%;
+        top: 7%;
+        left: 35%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 499px) {
+    .informacionCelular {
+        width: 70%;
+        min-height: 30%;
+        top: 10%;
+        left: 30%;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 399px) {
+    .informacionCelular {
+        width: 70%;
+        min-height: 30%;
+        top: 6%;
+        left: 30%;
+    }
+}
+
+@media (max-width: 359px) {
+    .informacionCelular {
+        width: 86%;
+        min-height: 30%;
+        top: 7%;
+        left: 7%;
+    }
+}
+
+.informacionCelular {
+    position: absolute;
+    background-color: white !important;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.informacionCelular__titulo {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--grisOscuro);
+}
+
+
+@media (min-width: 320px) and (max-width: 428px) {
+    .informacionCelular__titulo {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 429px) {
+    .informacionCelular__titulo {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 500px) {
+    .informacionCelular__titulo {
+        font-size: 1.5em;
+    }
+}
+
+/* ANIMACIÓN TEXTO */
+
+/* Estado INICIAL (requerido para la animación) */
+.focus-in-contract-bck {
+    opacity: 1;
+    display: inline-block;
+    /* Necesario para letter-spacing en elementos inline */
+}
+
+/* Estado ACTIVO (aquí va la animación) */
+.focus-in-contract-bck-active {
+    -webkit-animation: focus-in-contract-bck 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-contract-bck 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* Keyframes (igual que los tuyos) */
+@-webkit-keyframes focus-in-contract-bck {
+    0% {
+        letter-spacing: 2em;
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(12px);
+        transform: translateZ(12px);
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@keyframes focus-in-contract-bck {
+    0% {
+        letter-spacing: 2em;
+        -webkit-transform: translateX(100px);
+        transform: translateX(100px);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(12px);
+        transform: translateZ(12px);
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+
+/* ANIMACIÓN TEXTO DESDE ENMEDIO */
+
+.focus-in-expand-fwd {
+    opacity: 1;
+    display: inline-block;
+    will-change: transform, filter, opacity;
+}
+
+.focus-in-expand-fwd-active {
+    -webkit-animation: focus-in-expand-fwd 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+    animation: focus-in-expand-fwd 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+}
+
+@-webkit-keyframes focus-in-expand-fwd {
+    0% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-800px);
+        transform: translateZ(-800px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes focus-in-expand-fwd {
+    0% {
+        letter-spacing: -0.5em;
+        transform: translateZ(-800px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+
+/* Estado INICIAL - obligatorio */
+.focus-in-contract {
+    opacity: 1;
+    display: inline-block;
+    /* Necesario para letter-spacing */
+    will-change: opacity, letter-spacing;
+    /* Optimización */
+}
+
+/* Estado ACTIVO - contiene la animación */
+.focus-in-contract-active {
+    letter-spacing: 1em;
+    animation: focus-in-contract 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards;
+}
+
+/* Keyframes (mejorados) */
+@keyframes focus-in-contract {
+    to {
+        letter-spacing: normal;
+        opacity: 1;
+    }
+}
+
+
+
+.informacionCelular__texto {
+    color: var(--gris);
+    margin-top: 1rem;
+}
+
+.PTARcelular__boton {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+
+}
+
+.PTARcelular__prevBtn,
+.PTARcelular__nextBtn {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+@media (min-width: 809px) {
+    .PTARcelular__boton svg {
+        min-width: 7rem;
+    }
+
+    .informacionCelular__texto {
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 750px) and (max-width:808px) {
+    .PTARcelular__boton svg {
+        min-width: 6rem;
+    }
+
+    .informacionCelular__texto {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 320px) and (max-width:749px) {
+    .informacionCelular__texto {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 430px) and (max-width:749px) {
+    .PTARcelular__boton svg {
+        min-width: 5rem;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 429px) {
+    .PTARcelular__boton svg {
+        min-width: 4rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .PTARcelular__prevBtn {
+        padding: 10rem 2rem;
+    }
+
+    .PTARcelular__nextBtn {
+        padding: 8rem 2rem;
+    }
+}
+
+@media (min-width: 499px) and (max-width: 599px) {
+    .PTARcelular__prevBtn {
+        padding: 10rem .5rem;
+    }
+
+    .PTARcelular__nextBtn {
+        padding: 8rem .5rem;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 429px) {
+
+    .PTARcelular__prevBtn,
+    .PTARcelular__nextBtn {
+        padding: 10rem .5rem;
+    }
+}
+
+.PTARcelular__boton:hover {
+    cursor: pointer;
+}
+
+.PTARcelular__boton:hover .PTARcelular__svg {
+    fill: var(--rojoIconosClaro);
+}
+
+.PTARcelular__boton svg {
+    fill: var(--rojoIconos);
+}
+
+/* .tarjetasCelular__1 img {} */
+
+.tarjetasCelular__2 img {
+    object-position: 40% 0;
+}
+
+.tarjetasCelular__3 img {
+    object-position: 38% 10%;
+}
+
+.tarjetasCelular__4 img {
+    object-position: 18% 10%;
+}
+
+
+.tarjeta a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tarjeta a:hover {
+    scale: 1.05;
+}
+
+.tarjeta {
+    min-width: 28rem;   /* antes: 22rem */
+    max-width: 30rem;   /* antes: 24rem */
+    padding: 2.2rem 2rem 1.8rem;
+}
+
+.tarjeta a img {
+    width: 20rem;
+    height: 20rem;
+    /************************************************* quitar al poner imagenes cuadradas*/
+    border-radius: 50%;
+}
+
+.tarjeta a .titulo {
+    color: var(--negro);
+    font-size: 2.3rem;
+}
+
+.tarjeta a .descripcion {
+    color: var(--negro);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.panelTablet {
+    display: none;
+}
+
+@media (min-width: 501px) and (max-width: 900px) {
+    .panelTablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 2rem;
+        column-gap: 2rem;
+    }
+
+    .panelIRS,
+    .panelGestionSostenibleA,
+    .panelGestionAreasV,
+    .panelDisminucionGasesEI,
+    .panelConsumoResponsable {
+        cursor: pointer;
+    }
+
+    .panelIRS:hover .panelISR__titulo,
+    .panelGestionSostenibleA:hover .panelGestionSostenibleA__titulo,
+    .panelGestionAreasV:hover .panelGestionAreasV__titulo,
+    .panelDisminucionGasesEI:hover .panelDisminucionGasesEI__titulo,
+    .panelConsumoResponsable:hover .panelConsumoResponsable__titulo {
+        color: var(--rojoIconosClaro);
+    }
+}
+
+.tarjetaT {
+    background-color: rgb(255, 255, 255);
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 1.5rem;
+    box-shadow: 0px 0.9rem 1.4rem rgba(0, 0, 0, 0.30), 0px 0.5rem 1.2rem rgba(0, 0, 0, 0.22);
+    /* margin-right: 3rem; */
+    max-height: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    /* max-width: 44rem; */
+
+    /* margin: auto 1rem; */
+    margin-bottom: 3rem;
+    /* min-height: 55rem; */
+    display: flex;
+}
+
+.tarjetaT a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.tarjetaT:hover {
+    scale: 1.05;
+}
+
+.tarjetaT a img {
+    width: 18rem;
+    border-radius: 50%;
+}
+
+.tarjetaT a .titulo {
+    color: var(--negro);
+    font-size: 1.4em;
+    margin: 2rem auto;
+}
+
+.tarjetaT a .descripcion {
+    color: var(--negro);
+    font-size: 1em;
+    text-align: center;
+}
+
+.ocultarPanelTablet {
+    opacity: 0;
+    transform: scaleY(0);
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease;
+}
+
+.mostrarPanelTablet {
+    opacity: 1;
+    transform: scaleY(1);
+    height: auto;
+    transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease;
+}
+
+/** GALERIA DE IMAGENES
+/* ── CONTENEDOR PRINCIPAL ── */
+.galeria {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;        /* centra el bloque */
+    padding: 0 2rem;       /* espacio a izquierda y derecha */
+}
+
+.galeria__etiqueta {
+    font-size: 0.8em;
+    color: var(--rojoIconos);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    padding-left: 0.2rem;
+}
+
+/* ── CARRUSEL ── */
+.galeria__carrusel {
+    position: relative;
+    width: 100%;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    background: #222;
+    /* proporción 16:9 */
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 0.6rem 2.5rem rgba(0,0,0,0.18);
+}
+
+/* ── SLIDES ── */
+.galeria__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+}
+
+.galeria__slide.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Imagen de fondo que cubre todo */
+.galeria__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gradiente sutil para mejorar legibilidad de la tarjeta */
+.galeria__slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom right,
+        transparent 30%,
+        rgba(0,0,0,0.25) 100%
+    );
+    pointer-events: none;
+}
+
+/* ── TARJETA DE DESCRIPCIÓN ── */
+.galeria__info {
+    position: absolute;
+    bottom: 1.8rem;
+    right: 1.8rem;
+    width: min(42%, 340px);
+    background: rgba(255,255,255,0.97);
+    border-radius: 1rem;
+    padding: 1.5rem 1.8rem 1.6rem;
+    box-shadow: 0 0.3rem 1.5rem rgba(0,0,0,0.15);
+    z-index: 2;
+}
+
+.galeria__info-titulo {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    margin-bottom: 0.7rem;
+    line-height: 1.2;
+}
+
+.galeria__info-separador {
+    width: 3rem;
+    height: 0.18rem;
+    background-color: var(--rojoIconos);
+    margin-bottom: 0.9rem;
+    border-radius: 1rem;
+}
+
+.galeria__info-texto {
+    font-size: 0.82em;
+    color: var(--gris);
+    line-height: 1.65;
+    text-align: justify;
+}
+
+.galeria__info-texto p + p {
+    margin-top: 0.7rem;
+}
+
+/* ── BARRA INFERIOR: DOTS ── */
+.galeria__dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+}
+
+.galeria__dot {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background-color: #c8c8c8;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.galeria__dot.activo {
+    background-color: var(--rojoIconos);
+    transform: scale(1.2);
+}
+
+/* ── BARRA DE PROGRESO ── */
+.galeria__progreso {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.22rem;
+    background-color: var(--rojoIconos);
+    width: 0%;
+    z-index: 3;
+    transition: width linear;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+    .galeria__info {
+        width: calc(100% - 2.4rem);
+        right: 1.2rem;
+        bottom: 1.2rem;
+        padding: 1.2rem 1.4rem;
+    }
+    .galeria__info-titulo { font-size: 1.1em; }
+    .galeria__info-texto  { font-size: 0.78em; }
+}
+
+@media (max-width: 640px) {
+ 
+    /* Aumentar la altura del contenedor de la galería */
+    .ficha__galeria {
+        min-height: 28rem !important;
+        height:     28rem !important;
+    }
+ 
+    /* La imagen dentro ocupa todo el espacio */
+    .ficha__foto {
+        height: 28rem !important;
+    }
+ 
+    .ficha__foto img {
+        width:      100%;
+        height:     100%;
+        object-fit: cover;
+        object-position: center top; /* prioriza la parte superior de la imagen */
+    }
+}
+ 
+
+.organigrama__descripcion {
+    margin-top: 2.5rem;
+    text-align: justify;
+    max-width: 55rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-10%);
+}
+
+.organigrama__descripcion p {
+    font-size: 0.95em;
+    color: var(--grisOscuro);
+    line-height: 1.7;
+    margin: 0 0 0.8rem 0;
+}
+ 
+/* ── SABÍAS QUÉ ─────────────────────────────────────────────────── */
+ 
+.sabiasQue {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin: 4rem 4rem 6rem 4rem;
+    align-items: start;
+}
+ 
+.sabiasQue__titulo {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    margin-bottom: 2rem;
+}
+ 
+/* ── GRID DE TARJETAS ── */
+.sabiasQue__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1.5rem;
+}
+ 
+/* ── TARJETA DATO ── */
+.dato {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+ 
+.dato__icono {
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    background-color: #e4e4e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.9rem;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+ 
+.dato__icono img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+ 
+.dato__icono svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 0.45;
+}
+ 
+.dato__titulo {
+    font-size: 1.15em;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+}
+ 
+.dato__separador {
+    width: 2.2rem;
+    height: 0.15rem;
+    background-color: var(--rojoIconos);
+    border-radius: 1rem;
+    margin-bottom: 0.45rem;
+    flex-shrink: 0;
+}
+ 
+.dato__descripcion {
+    font-size: 0.8em;
+    color: var(--gris);
+    line-height: 1.55;
+}
+ 
+/* ── LADO DERECHO ── */
+.sabiasQue__derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+ 
+.sabiasQue__tituloD {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: var(--grisOscuro);
+    line-height: 1.35;
+}
+ 
+.sabiasQue__imagen-wrap {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #d0d0d0;
+    min-height: 19rem;
+}
+ 
+.sabiasQue__imagen-wrap img {
+    width: 100%;
+    height: 100%;
+    min-height: 19rem;
+    object-fit: cover;
+    display: block;
+    border-radius: 1rem;
+}
+ 
+.sabiasQue__imagen-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 30%, rgba(255,255,255,0.85) 58%);
+    border-radius: 1rem;
+    pointer-events: none;
+}
+ 
+.sabiasQue__texto {
+    position: absolute;
+    top: 50%;
+    right: 1.8rem;
+    transform: translateY(-50%);
+    width: 52%;
+    z-index: 2;
+}
+ 
+.sabiasQue__texto p {
+    font-size: 0.85em;
+    color: var(--grisOscuro);
+    line-height: 1.7;
+    text-align: justify;
+}
+ 
+.sabiasQue__texto p + p {
+    margin-top: 0.9rem;
+}
+
+@media (max-width: 900px) {
+ 
+    /* La caja de texto dentro de la tarjeta de imagen */
+    .sabiasQue__derecha .informacion__izquierda .informacion__texto,
+    .sabiasQue__derecha .informacion__derecha   .informacion__texto {
+        font-size: 0.78em !important;
+        line-height: 1.5  !important;
+    }
+}
+ 
+@media (max-width: 560px) {
+ 
+    /* Aún más pequeño en móvil pequeño */
+    .sabiasQue__derecha .informacion__izquierda .informacion__texto,
+    .sabiasQue__derecha .informacion__derecha   .informacion__texto {
+        font-size: 0.72em !important;
+        line-height: 1.45 !important;
+    }
+ 
+    /* Asegurar que la caja no tenga altura fija ni overflow oculto */
+    .sabiasQue__derecha .informacion__izquierda,
+    .sabiasQue__derecha .informacion__derecha {
+        min-height: unset !important;
+        height:     auto  !important;
+        overflow:   visible !important;
+    }
+}
+ 
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+    .sabiasQue {
+        grid-template-columns: 1fr;
+        margin: 3rem 2rem 4rem 2rem;
+        gap: 2.5rem;
+    }
+}
+ 
+@media (max-width: 560px) {
+    .sabiasQue__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem 0.8rem;
+    }
+    .sabiasQue__texto {
+        width: 55%;
+        right: 1rem;
+    }
+}
+ 
+@media (max-width: 400px) {
+    .sabiasQue__grid { grid-template-columns: 1fr; }
+    .sabiasQue__imagen-wrap::after {
+        background: linear-gradient(to top, rgba(255,255,255,0.92) 40%, transparent 100%);
+    }
+    .sabiasQue__texto {
+        position: static;
+    }
+}
+
+/* PGIRS*/
+.TituloP2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.TituloP2 h1{
+    font-family: sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    width: 30%;
+}
+.TituloP2 .inline {
+    position: relative; /* Necesario para posicionar elementos internos */
+    width: 100%; /* Ajusta según lo necesario */
+    height: 50px; /* Define una altura para que se note el efecto */
+}
+
+.TituloP2 .inline::after {
+    content: ''; /* Crea una pseudo-línea */
+    position: absolute;
+    top: 170%; /* Posiciona al centro verticalmente */
+    left: 0;
+    width: 100%;
+    height: 5px; /* Grosor de la línea */
+    background-color: rgb(199, 19, 49); /* Color de la línea */
+    transform: translateY(-100%); /* Ajusta la posición exactamente en el medio */
+}
+/*Carrucel de Gestion Integral de Residuos*/
+.panelIRS__carrucel {
+    position: relative;
+    display: grid;
+    height: auto;
+}
+
+.EspacioV {
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%; /* Ajusta según necesites */
+    position: absolute;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 0.05));
+    z-index: 1;
+}
+
+.Carrusel {
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    background-color: white;
+    position: relative;
+}
+
+.carrusel-contenedor {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    gap: 20px;
+    animation: mover 150s linear infinite;
+}
+
+/* Animación continua */
+@keyframes mover {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-1000%);
+    }
+}
+
+@media (max-width: 900px){
+    .Carrusel{
+        display: none;
+        height: auto;
+    }
+    .carrusel-contenedor{
+        animation: none;
+        display: none;
+    }
+    .EspacioV{
+        display: none;
+    }
+    .panelIRS__carrucel{
+        height: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .Carrusel{
+        display: none;
+        height: 0px;
+    }
+    .carrusel-contenedor{
+        display: none;
+    }
+    .panelIRS__carrucel{
+        height: 0px;
+    }
+}
+
+.carrusel-contenedor:hover {
+    animation-play-state: paused;
+}
+
+/*PGSA*/
+.TituloP3{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.TituloP3 h1{
+    font-family: sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    width: 30%;
+}
+.TituloP3 .inline2 {
+    position: relative; /* Necesario para posicionar elementos internos */
+    width: 100%; /* Ajusta según lo necesario */
+    height: 50px; /* Define una altura para que se note el efecto */
+}
+
+.TituloP3 .inline2::after {
+    content: ''; /* Crea una pseudo-línea */
+    position: absolute;
+    top: 170%; /* Posiciona al centro verticalmente */
+    left: 0;
+    width: 100%;
+    height: 5px; /* Grosor de la línea */
+    background-color: rgb(199, 19, 49); /* Color de la línea */
+    transform: translateY(-100%); /* Ajusta la posición exactamente en el medio */
+}
+
+
+.panelGestionSostenibleA__carrucel {
+    position: relative;
+    display: grid;
+    height: auto;
+}
+
+.EspacioV2 {
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%; /* Ajusta según necesites */
+    position: absolute;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 75%, rgba(255, 255, 255, 0.05));
+    z-index: 1;
+}
+
+.Carrusel2 {
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    background-color: white;
+    position: relative;
+}
+
+.carrusel2-contenedor {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    gap: 20px;
+    animation: mover2 150s linear infinite;
+}
+
+/* Animación continua */
+@keyframes mover2 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-1000%);
+    }
+}
+
+@media (max-width: 900px){
+    .Carrusel2{
+        display: none;
+        height: auto;
+    }
+    .carrusel2-contenedor{
+        animation: none;
+        display: none;
+    }
+    .EspacioV2{
+        display: none;
+    }
+    .panelGestionSostenibleA__carrucel{
+        height: auto;
+    }
+}
+
+.carrusel2-contenedor:hover {
+    animation-play-state: paused;
+}
+
+
+/*PGAV*/
+.panelGestionAreasV__carrucel{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); /* Cuatro columnas inicialmente */
+    grid-template-rows: auto auto;
+    align-items: stretch;
+    padding-right: 1.5rem;
+}
+
+#EspacioV3:hover{
+    border: white 0px solid;
+}
+
+.tarjeta21{
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 19px 34px rgba(0, 0, 0, 0.30), 0px 15px 12px rgba(0, 0, 0, 0.22);
+    margin-left: 30px;
+    margin-bottom: 30px;
+    /*PP*/
+    max-width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+.tarjeta21 a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+}
+
+.tarjeta21 a:hover {
+    scale: 1.05;
+}
+
+
+.tarjeta21 a img {
+    width: 20rem;
+    height: 20rem;
+    /************************************************* quitar al poner imagenes cuadradas*/
+    border-radius: 50%;
+}
+
+.tarjeta21 a .titulo {
+    color: var(--negro);
+    font-size: 2.3rem;
+}
+
+.tarjeta21 a .descripcion {
+    color: var(--negro);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/* Agregar borde Rojo a las tarjetas faltantes */
+.borde-rojo2 {
+    border: 2px solid red;
+    /* Define el borde rojo */
+    transition: border 0.3s ease;
+    /* Suaviza el cambio */
+    box-shadow: 0px 4px 8px rgba(190, 45, 55, 0.9);
+}
+
+/* Checar el acomodo de las tarjetas en 915px*/
+@media (min-width: 501px) and (max-width: 900px) {
+    .tarjeta21 {
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+        text-align: center;
+        border-radius: 15px;
+        box-shadow: 0px 19px 34px rgba(0,0,0,0.30), 0px 15px 12px rgba(0,0,0,0.22);
+        margin-right: 10px;
+        max-height: 100%;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        min-width: 10rem;
+        
+    }
+    .tarjeta21 a img {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+    }
+
+    .tarjeta21 a .titulo {
+        color: var(--negro);
+        font-size: 1.85rem;
+    }
+    .tarjeta21 a .descripcion {
+        color: var(--negro);
+        font-size: 1.15rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 900px){
+    .panelGestionAreasV__carrucel{
+        display: none;
+    }   
+}
+
+/*PDGEI*/
+
+/* ── CARRUSEL ÁRBOLES RESPONSIVO ─────────────────────────────── */
+
+/* Oculto en escritorio, visible en tablet y móvil */
+.arboles__responsivo {
+    display: none;
+}
+
+@media (max-width: 1049px) {
+    /* Ocultar carrusel de escritorio */
+    .arboles {
+        display: none;
+    }
+
+    /* Mostrar sección responsiva */
+    .arboles__responsivo {
+        display: block;
+        padding: 0 1rem;
+    }
+}
+
+/* ── CONTENEDOR MÓVIL (portal) ── */
+.portal_contenedor {
+    display: none; /* se activa solo en móvil */
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+@media (max-width: 649px) {
+    .portal_contenedor {
+        display: flex;
+    }
+}
+
+.portal_viewport {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    min-height: 38rem;
+}
+
+/* ── CONTENEDOR TABLET (procedimiento) ── */
+.procedimiento_contenedor {
+    display: none; /* se activa solo en tablet */
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+@media (min-width: 650px) and (max-width: 1049px) {
+    .procedimiento_contenedor {
+        display: flex;
+    }
+}
+
+.proc_viewport {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    position: relative;
+    min-height: 38rem;
+}
+
+/* ── TARJETAS RESPONSIVAS ── */
+
+/* Estado base: oculta */
+.TarjetaPortal,
+.TarjetaProc {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0px 9px 14px rgba(0,0,0,0.20), 0px 5px 12px rgba(0,0,0,0.14);
+    padding: 2.2rem 2rem 1.8rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    /* Mismo tamaño que tarjeta escritorio */
+    min-width: 28rem;
+    max-width: 30rem;
+}
+
+/* Estado activa: visible */
+.TarjetaPortal.activa,
+.TarjetaProc.activa {
+    display: flex;
+}
+
+.TarjetaPortal:hover,
+.TarjetaProc:hover {
+    transform: scale(1.03);
+}
+
+.TarjetaPortal a,
+.TarjetaProc a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-decoration: none;
+}
+
+.TarjetaPortal a img,
+.TarjetaProc a img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.TarjetaPortal .titulo,
+.TarjetaProc .titulo {
+    color: var(--negro);
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+.TarjetaPortal .descripcion,
+.TarjetaProc .descripcion {
+    color: var(--negro);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.TarjetaPortal .tarjeta__separador,
+.TarjetaProc .tarjeta__separador {
+    width: 100%;
+    height: 0.1rem;
+    background-color: #e0e0e0;
+    margin: 0.5rem 0;
+}
+
+/* ── BOTONES DE NAVEGACIÓN RESPONSIVOS ── */
+
+.portal-nav,
+.proc-nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.portal-nav:hover,
+.proc-nav:hover {
+    opacity: 1;
+}
+
+.portal-nav img,
+.proc-nav img {
+    width: 4rem;
+    height: 4rem;
+}
+
+/* Flecha izquierda rotada */
+.portal-nav.prev img,
+.proc-nav.prev img {
+    transform: rotate(180deg);
+}
+
+/* ── RESPONSIVO: Título "Árboles de excepcionalidad botánica" ── */
+
+@media (max-width: 1049px) {
+    .PTAR__titulo p {
+        left: 2rem;
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 600px) {
+    .PTAR__titulo {
+        min-height: 20rem;
+    }
+
+    .PTAR__titulo p {
+        left: 1rem;
+        right: 1rem;
+        font-size: 1.4em;
+        top: 3rem;
+        line-height: 1.4;
+    }
+}
+
+/* ── RESPONSIVO: Título "Árboles de excepcionalidad botánica" ── */
+
+@media (max-width: 1049px) {
+    .PTAR__titulo p {
+        left: 2rem;
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 600px) {
+    .PTAR__titulo {
+        min-height: 20rem;
+    }
+
+    .PTAR__titulo p {
+        left: 1rem;
+        right: 1rem;
+        font-size: 1.4em;
+        top: 3rem;
+        line-height: 1.4;
+    }
+}
+
+/* ── RESPONSIVO: Texto descripción organigrama ── */
+
+@media (max-width: 1049px) {
+    .organigrama__descripcion {
+        max-width: 90%;
+        transform: translate(-50%, 0);
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .organigrama__descripcion {
+        max-width: 100%;
+        padding: 0 1.5rem;
+        left: 0;
+        transform: none;
+        position: static;
+        margin: 2rem auto;
+    }
+
+    .organigrama__descripcion p {
+        font-size: 0.9em;
+        text-align: justify;
+    }
+}
+.carrusel-contenedor {
+    display: flex;
+    gap: 20px;
+    cursor: grab; /* Indica que se puede agarrar */
+    user-select: none; /* Evita que se seleccione texto al arrastrar */
+    -webkit-user-drag: none; /* Evita arrastrar imágenes por defecto */
+}
+
+.carrusel-contenedor:active {
+    cursor: grabbing; /* Cambia el cursor al arrastrar */
+}
+
+/* Evita que los enlaces e imágenes dentro de la tarjeta interrumpan el arrastre */
+.tarjeta, .tarjeta img, .tarjeta a {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+/* ═══════════════════════════════════════════════════════
+   PARCHE FLECHAS — Cuidado del Paisaje y Áreas Verdes
+   Pegar al final del CSS principal.
+   Neutraliza los estilos propios de cada clase de botón
+   y aplica el estilo unificado .btn-nav-ptar.
+═══════════════════════════════════════════════════════ */
+ 
+/* ── 1. PTARcelular (ya cubierto por el parche anterior,
+        se refuerza aquí por si no está incluido) ── */
+.PTARcelular__boton.btn-nav-ptar,
+.PTARcelular__boton svg,
+.btn-nav-ptar svg {
+    min-width: unset !important;
+}
+ 
+/* ── 2. Botones del carrusel de árboles escritorio ──
+        .arboles__btn tiene estilos propios que hay que anular */
+.arboles__btn.btn-nav-ptar {
+    /* Anular span contenedor y la imagen antigua */
+    background:        white !important;
+    background-color:  white !important;
+    box-shadow:        none  !important;
+    border:            0.15rem solid var(--rojo) !important;
+    color:             var(--rojo) !important;
+    width:             2.8rem !important;
+    height:            2.8rem !important;
+    border-radius:     50% !important;
+    padding:           0 !important;
+    display:           flex !important;
+    align-items:       center !important;
+    justify-content:   center !important;
+    opacity:           1 !important;   /* evita el 0.35 del estado deshabilitado del JS */
+    flex-shrink:       0;
+    cursor:            pointer;
+    transition:        background var(--transicion, 0.2s ease),
+                       color var(--transicion, 0.2s ease);
+}
+ 
+.arboles__btn.btn-nav-ptar:hover {
+    background-color:  var(--rojo) !important;
+    background:        var(--rojo) !important;
+    color:             white !important;
+}
+ 
+/* Cuando el JS pone opacity 0.35 al llegar al extremo,
+   lo mantenemos pero con el color correcto */
+.arboles__btn.btn-nav-ptar[style*="opacity: 0.35"],
+.arboles__btn.btn-nav-ptar[style*="opacity:0.35"] {
+    border-color:      var(--rojo) !important;
+    color:             var(--rojo) !important;
+    background:        white !important;
+}
+ 
+/* ── 3. portal-nav y proc-nav
+        Estos botones en este CSS tienen background:none,
+        imagen y transformación rotate. Hay que anularlo. ── */
+.portal-nav.btn-nav-ptar,
+.proc-nav.btn-nav-ptar {
+    background:        white !important;
+    background-color:  white !important;
+    border:            0.15rem solid var(--rojo) !important;
+    color:             var(--rojo) !important;
+    width:             2.8rem !important;
+    height:            2.8rem !important;
+    border-radius:     50% !important;
+    padding:           0 !important;
+    opacity:           1 !important;
+    display:           flex !important;
+    align-items:       center !important;
+    justify-content:   center !important;
+    flex-shrink:       0;
+    cursor:            pointer;
+    transition:        background var(--transicion, 0.2s ease),
+                       color var(--transicion, 0.2s ease);
+}
+ 
+.portal-nav.btn-nav-ptar:hover,
+.proc-nav.btn-nav-ptar:hover {
+    background-color:  var(--rojo) !important;
+    background:        var(--rojo) !important;
+    color:             white !important;
+}
+ 
+/* SVG unificado para todos */
+.arboles__btn.btn-nav-ptar svg,
+.portal-nav.btn-nav-ptar svg,
+.proc-nav.btn-nav-ptar svg {
+    width:       1.2rem !important;
+    height:      1.2rem !important;
+    min-width:   unset  !important;
+    stroke:      currentColor !important;
+    fill:        none   !important;
+    display:     block;
+    flex-shrink: 0;
+    /* Anular rotate(180deg) que tenía el .prev con img */
+    transform:   none   !important;
+}
+
+/* ═══════════════════════════════════════════════
+   PARCHE PTAR — flechas unificadas
+   Pegar al final del CSS principal, después de
+   los estilos de .PTARcelular existentes.
+   Sobreescribe los estilos de botón anteriores.
+═══════════════════════════════════════════════ */
+ 
+/* Anular todos los min-width por breakpoint del svg antiguo */
+.PTARcelular__boton svg,
+.btn-nav-ptar svg {
+    min-width: unset !important;
+    width:     1.2rem !important;
+    height:    1.2rem !important;
+    stroke:    currentColor;
+    fill:      none;
+    display:   block;
+    flex-shrink: 0;
+}
+ 
+/* Anular paddings laterales heredados que separaban el svg grande */
+.PTARcelular__prevBtn,
+.PTARcelular__nextBtn {
+    padding: 0 !important;
+}
+ 
+/* Estilo del botón — igual que .proyectos__nav-btn */
+.btn-nav-ptar {
+    width:         2.8rem;
+    height:        2.8rem;
+    border-radius: 50%;
+    border:        0.15rem solid var(--rojo);
+    background:    white;
+    color:         var(--rojo);
+    cursor:        pointer;
+    display:       flex;
+    align-items:   center;
+    justify-content: center;
+    transition:    background var(--transicion), color var(--transicion);
+    flex-shrink:   0;
+    /* Eliminar fill heredado del svg antiguo */
+    fill:          none;
+}
+ 
+.btn-nav-ptar:hover {
+    background: var(--rojo);
+    color:      white;
+}

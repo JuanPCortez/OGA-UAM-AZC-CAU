@@ -1,0 +1,3 @@
+*.zip
+.vscode/
+tmp_patch_gallery.py
